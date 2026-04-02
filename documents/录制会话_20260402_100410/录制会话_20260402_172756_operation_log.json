@@ -1,0 +1,1007 @@
+{
+  "session_id": "20260402_172756",
+  "start_time": "2026-04-02T17:27:56.799316",
+  "event_count": 25,
+  "events": [
+    {
+      "time": "2026-04-02T17:27:56.799316",
+      "type": "mouse_move",
+      "x": 809,
+      "y": 641,
+      "window_title": "Advanced Computer Operation Recorder",
+      "element_type": "other",
+      "element_content": "TkChild",
+      "detail": "Mouse at (809, 641)",
+      "operation_category": "",
+      "show_behavior_marker": true,
+      "window_handle": 3935976,
+      "window_class_name": "TkChild",
+      "window_process_id": 37664,
+      "window_process_name": "python.exe",
+      "window_visible": 1,
+      "window_enabled": 1,
+      "window_active": false,
+      "control_handle": 3935976,
+      "control_class_name": "TkChild",
+      "control_text": "",
+      "application_name": "Advanced Computer Operation Recorder",
+      "rect": [
+        238,
+        490,
+        1194,
+        708
+      ],
+      "relative_coordinates": {
+        "x": 238,
+        "y": 490,
+        "width": 956,
+        "height": 218
+      },
+      "element_confidence": 0.9,
+      "element_state": {
+        "window_handle": 3935976,
+        "control_handle": 3935976
+      }
+    },
+    {
+      "time": "2026-04-02T17:27:58.104727",
+      "type": "mouse_move",
+      "x": 1193,
+      "y": 348,
+      "window_title": "Advanced Computer Operation Recorder",
+      "element_type": "other",
+      "element_content": "TkChild",
+      "detail": "Mouse at (1193, 348)",
+      "operation_category": "",
+      "show_behavior_marker": true,
+      "window_handle": 91296214,
+      "window_class_name": "TkChild",
+      "window_process_id": 37664,
+      "window_process_name": "python.exe",
+      "window_visible": 1,
+      "window_enabled": 1,
+      "window_active": false,
+      "control_handle": 91296214,
+      "control_class_name": "TkChild",
+      "control_text": "",
+      "application_name": "Advanced Computer Operation Recorder",
+      "rect": [
+        226,
+        327,
+        1206,
+        451
+      ],
+      "relative_coordinates": {
+        "x": 226,
+        "y": 327,
+        "width": 980,
+        "height": 124
+      },
+      "element_confidence": 0.9,
+      "element_state": {
+        "window_handle": 91296214,
+        "control_handle": 91296214
+      }
+    },
+    {
+      "time": "2026-04-02T17:27:59.574132",
+      "type": "mouse_click",
+      "x": 1193,
+      "y": 348,
+      "window_title": "Advanced Computer Operation Recorder",
+      "element_type": "other",
+      "element_content": "TkChild",
+      "detail": "Mouse left Click",
+      "operation_category": "",
+      "show_behavior_marker": true,
+      "window_handle": 91296214,
+      "window_class_name": "TkChild",
+      "window_process_id": 37664,
+      "window_process_name": "python.exe",
+      "window_visible": 1,
+      "window_enabled": 1,
+      "window_active": false,
+      "control_handle": 91296214,
+      "control_class_name": "TkChild",
+      "control_text": "",
+      "application_name": "Advanced Computer Operation Recorder",
+      "rect": [
+        226,
+        327,
+        1206,
+        451
+      ],
+      "relative_coordinates": {
+        "x": 226,
+        "y": 327,
+        "width": 980,
+        "height": 124
+      },
+      "element_confidence": 0.9,
+      "element_state": {
+        "window_handle": 91296214,
+        "control_handle": 91296214
+      }
+    },
+    {
+      "time": "2026-04-02T17:28:01.558175",
+      "type": "mouse_move",
+      "x": 1193,
+      "y": 348,
+      "window_title": "Advanced Computer Operation Recorder",
+      "element_type": "other",
+      "element_content": "TkChild",
+      "detail": "Mouse at (1193, 348)",
+      "operation_category": "",
+      "show_behavior_marker": true,
+      "window_handle": 91296214,
+      "window_class_name": "TkChild",
+      "window_process_id": 37664,
+      "window_process_name": "python.exe",
+      "window_visible": 1,
+      "window_enabled": 1,
+      "window_active": false,
+      "control_handle": 91296214,
+      "control_class_name": "TkChild",
+      "control_text": "",
+      "application_name": "Advanced Computer Operation Recorder",
+      "rect": [
+        226,
+        327,
+        1206,
+        451
+      ],
+      "relative_coordinates": {
+        "x": 226,
+        "y": 327,
+        "width": 980,
+        "height": 124
+      },
+      "element_confidence": 0.9,
+      "element_state": {
+        "window_handle": 91296214,
+        "control_handle": 91296214
+      }
+    },
+    {
+      "time": "2026-04-02T17:28:02.853587",
+      "type": "mouse_move",
+      "x": 409,
+      "y": 291,
+      "window_title": "Advanced Computer Operation Recorder",
+      "element_type": "other",
+      "element_content": "TkChild",
+      "detail": "Mouse at (409, 291)",
+      "operation_category": "",
+      "show_behavior_marker": true,
+      "window_handle": 2427312,
+      "window_class_name": "TkChild",
+      "window_process_id": 37664,
+      "window_process_name": "python.exe",
+      "window_visible": 1,
+      "window_enabled": 1,
+      "window_active": false,
+      "control_handle": 2427312,
+      "control_class_name": "TkChild",
+      "control_text": "",
+      "application_name": "Advanced Computer Operation Recorder",
+      "rect": [
+        350,
+        278,
+        454,
+        305
+      ],
+      "relative_coordinates": {
+        "x": 350,
+        "y": 278,
+        "width": 104,
+        "height": 27
+      },
+      "element_confidence": 0.9,
+      "element_state": {
+        "window_handle": 2427312,
+        "control_handle": 2427312
+      }
+    },
+    {
+      "time": "2026-04-02T17:28:02.997204",
+      "type": "mouse_click",
+      "x": 409,
+      "y": 291,
+      "window_title": "Advanced Computer Operation Recorder",
+      "element_type": "other",
+      "element_content": "TkChild",
+      "detail": "Mouse left Click",
+      "operation_category": "",
+      "show_behavior_marker": true,
+      "window_handle": 2427312,
+      "window_class_name": "TkChild",
+      "window_process_id": 37664,
+      "window_process_name": "python.exe",
+      "window_visible": 1,
+      "window_enabled": 1,
+      "window_active": false,
+      "control_handle": 2427312,
+      "control_class_name": "TkChild",
+      "control_text": "",
+      "application_name": "Advanced Computer Operation Recorder",
+      "rect": [
+        350,
+        278,
+        454,
+        305
+      ],
+      "relative_coordinates": {
+        "x": 350,
+        "y": 278,
+        "width": 104,
+        "height": 27
+      },
+      "element_confidence": 0.9,
+      "element_state": {
+        "window_handle": 2427312,
+        "control_handle": 2427312
+      }
+    },
+    {
+      "time": "2026-04-02T17:28:07.714317",
+      "type": "mouse_move",
+      "x": 424,
+      "y": 290,
+      "window_title": "Advanced Computer Operation Recorder",
+      "element_type": "other",
+      "element_content": "TkChild",
+      "detail": "Mouse at (424, 290)",
+      "operation_category": "",
+      "show_behavior_marker": true,
+      "window_handle": 2427312,
+      "window_class_name": "TkChild",
+      "window_process_id": 37664,
+      "window_process_name": "python.exe",
+      "window_visible": 1,
+      "window_enabled": 1,
+      "window_active": false,
+      "control_handle": 2427312,
+      "control_class_name": "TkChild",
+      "control_text": "",
+      "application_name": "Advanced Computer Operation Recorder",
+      "rect": [
+        350,
+        278,
+        454,
+        305
+      ],
+      "relative_coordinates": {
+        "x": 350,
+        "y": 278,
+        "width": 104,
+        "height": 27
+      },
+      "element_confidence": 0.9,
+      "element_state": {
+        "window_handle": 2427312,
+        "control_handle": 2427312
+      }
+    },
+    {
+      "time": "2026-04-02T17:28:09.493754",
+      "type": "mouse_move",
+      "x": 365,
+      "y": 431,
+      "window_title": "Advanced Computer Operation Recorder",
+      "element_type": "other",
+      "element_content": "TkChild",
+      "detail": "Mouse at (365, 431)",
+      "operation_category": "",
+      "show_behavior_marker": true,
+      "window_handle": 91296214,
+      "window_class_name": "TkChild",
+      "window_process_id": 37664,
+      "window_process_name": "python.exe",
+      "window_visible": 1,
+      "window_enabled": 1,
+      "window_active": false,
+      "control_handle": 91296214,
+      "control_class_name": "TkChild",
+      "control_text": "",
+      "application_name": "Advanced Computer Operation Recorder",
+      "rect": [
+        226,
+        327,
+        1206,
+        451
+      ],
+      "relative_coordinates": {
+        "x": 226,
+        "y": 327,
+        "width": 980,
+        "height": 124
+      },
+      "element_confidence": 0.9,
+      "element_state": {
+        "window_handle": 91296214,
+        "control_handle": 91296214
+      }
+    },
+    {
+      "time": "2026-04-02T17:28:09.668998",
+      "type": "mouse_click",
+      "x": 365,
+      "y": 431,
+      "window_title": "Advanced Computer Operation Recorder",
+      "element_type": "other",
+      "element_content": "TkChild",
+      "detail": "Mouse left Click",
+      "operation_category": "",
+      "show_behavior_marker": true,
+      "window_handle": 91296214,
+      "window_class_name": "TkChild",
+      "window_process_id": 37664,
+      "window_process_name": "python.exe",
+      "window_visible": 1,
+      "window_enabled": 1,
+      "window_active": false,
+      "control_handle": 91296214,
+      "control_class_name": "TkChild",
+      "control_text": "",
+      "application_name": "Advanced Computer Operation Recorder",
+      "rect": [
+        226,
+        327,
+        1206,
+        451
+      ],
+      "relative_coordinates": {
+        "x": 226,
+        "y": 327,
+        "width": 980,
+        "height": 124
+      },
+      "element_confidence": 0.9,
+      "element_state": {
+        "window_handle": 91296214,
+        "control_handle": 91296214
+      }
+    },
+    {
+      "time": "2026-04-02T17:28:12.149384",
+      "type": "mouse_click",
+      "x": 365,
+      "y": 431,
+      "window_title": "Advanced Computer Operation Recorder",
+      "element_type": "other",
+      "element_content": "TkChild",
+      "detail": "Mouse left Click",
+      "operation_category": "",
+      "show_behavior_marker": true,
+      "window_handle": 91296214,
+      "window_class_name": "TkChild",
+      "window_process_id": 37664,
+      "window_process_name": "python.exe",
+      "window_visible": 1,
+      "window_enabled": 1,
+      "window_active": false,
+      "control_handle": 91296214,
+      "control_class_name": "TkChild",
+      "control_text": "",
+      "application_name": "Advanced Computer Operation Recorder",
+      "rect": [
+        226,
+        327,
+        1206,
+        451
+      ],
+      "relative_coordinates": {
+        "x": 226,
+        "y": 327,
+        "width": 980,
+        "height": 124
+      },
+      "element_confidence": 0.9,
+      "element_state": {
+        "window_handle": 91296214,
+        "control_handle": 91296214
+      }
+    },
+    {
+      "time": "2026-04-02T17:28:13.746199",
+      "type": "mouse_move",
+      "x": 365,
+      "y": 430,
+      "window_title": "Advanced Computer Operation Recorder",
+      "element_type": "other",
+      "element_content": "TkChild",
+      "detail": "Mouse at (365, 430)",
+      "operation_category": "",
+      "show_behavior_marker": true,
+      "window_handle": 91296214,
+      "window_class_name": "TkChild",
+      "window_process_id": 37664,
+      "window_process_name": "python.exe",
+      "window_visible": 1,
+      "window_enabled": 1,
+      "window_active": false,
+      "control_handle": 91296214,
+      "control_class_name": "TkChild",
+      "control_text": "",
+      "application_name": "Advanced Computer Operation Recorder",
+      "rect": [
+        226,
+        327,
+        1206,
+        451
+      ],
+      "relative_coordinates": {
+        "x": 226,
+        "y": 327,
+        "width": 980,
+        "height": 124
+      },
+      "element_confidence": 0.9,
+      "element_state": {
+        "window_handle": 91296214,
+        "control_handle": 91296214
+      }
+    },
+    {
+      "time": "2026-04-02T17:28:14.401881",
+      "type": "mouse_move",
+      "x": 495,
+      "y": 289,
+      "window_title": "Advanced Computer Operation Recorder",
+      "element_type": "other",
+      "element_content": "TkChild",
+      "detail": "Mouse at (495, 289)",
+      "operation_category": "",
+      "show_behavior_marker": true,
+      "window_handle": 8786416,
+      "window_class_name": "TkChild",
+      "window_process_id": 37664,
+      "window_process_name": "python.exe",
+      "window_visible": 1,
+      "window_enabled": 1,
+      "window_active": false,
+      "control_handle": 8786416,
+      "control_class_name": "TkChild",
+      "control_text": "",
+      "application_name": "Advanced Computer Operation Recorder",
+      "rect": [
+        464,
+        278,
+        561,
+        305
+      ],
+      "relative_coordinates": {
+        "x": 464,
+        "y": 278,
+        "width": 97,
+        "height": 27
+      },
+      "element_confidence": 0.9,
+      "element_state": {
+        "window_handle": 8786416,
+        "control_handle": 8786416
+      }
+    },
+    {
+      "time": "2026-04-02T17:28:14.741613",
+      "type": "mouse_click",
+      "x": 495,
+      "y": 289,
+      "window_title": "Advanced Computer Operation Recorder",
+      "element_type": "other",
+      "element_content": "TkChild",
+      "detail": "Mouse left Click",
+      "operation_category": "",
+      "show_behavior_marker": true,
+      "window_handle": 8786416,
+      "window_class_name": "TkChild",
+      "window_process_id": 37664,
+      "window_process_name": "python.exe",
+      "window_visible": 1,
+      "window_enabled": 1,
+      "window_active": false,
+      "control_handle": 8786416,
+      "control_class_name": "TkChild",
+      "control_text": "",
+      "application_name": "Advanced Computer Operation Recorder",
+      "rect": [
+        464,
+        278,
+        561,
+        305
+      ],
+      "relative_coordinates": {
+        "x": 464,
+        "y": 278,
+        "width": 97,
+        "height": 27
+      },
+      "element_confidence": 0.9,
+      "element_state": {
+        "window_handle": 8786416,
+        "control_handle": 8786416
+      }
+    },
+    {
+      "time": "2026-04-02T17:28:14.761841",
+      "type": "mouse_move",
+      "x": 496,
+      "y": 289,
+      "window_title": "Advanced Computer Operation Recorder",
+      "element_type": "other",
+      "element_content": "TkChild",
+      "detail": "Mouse at (496, 289)",
+      "operation_category": "",
+      "show_behavior_marker": true,
+      "window_handle": 8786416,
+      "window_class_name": "TkChild",
+      "window_process_id": 37664,
+      "window_process_name": "python.exe",
+      "window_visible": 1,
+      "window_enabled": 1,
+      "window_active": false,
+      "control_handle": 8786416,
+      "control_class_name": "TkChild",
+      "control_text": "",
+      "application_name": "Advanced Computer Operation Recorder",
+      "rect": [
+        464,
+        278,
+        561,
+        305
+      ],
+      "relative_coordinates": {
+        "x": 464,
+        "y": 278,
+        "width": 97,
+        "height": 27
+      },
+      "element_confidence": 0.9,
+      "element_state": {
+        "window_handle": 8786416,
+        "control_handle": 8786416
+      }
+    },
+    {
+      "time": "2026-04-02T17:28:15.877380",
+      "type": "mouse_move",
+      "x": 805,
+      "y": 690,
+      "window_title": "停止录制确认",
+      "element_type": "other",
+      "element_content": "TkChild",
+      "detail": "Mouse at (805, 690)",
+      "operation_category": "",
+      "show_behavior_marker": true,
+      "window_handle": 4986884,
+      "window_class_name": "TkChild",
+      "window_process_id": 37664,
+      "window_process_name": "python.exe",
+      "window_visible": 1,
+      "window_enabled": 1,
+      "window_active": false,
+      "control_handle": 4986884,
+      "control_class_name": "TkChild",
+      "control_text": "",
+      "application_name": "Advanced Computer Operation Recorder",
+      "rect": [
+        767,
+        674,
+        847,
+        701
+      ],
+      "relative_coordinates": {
+        "x": 767,
+        "y": 674,
+        "width": 80,
+        "height": 27
+      },
+      "element_confidence": 0.9,
+      "element_state": {
+        "window_handle": 4986884,
+        "control_handle": 4986884
+      }
+    },
+    {
+      "time": "2026-04-02T17:28:15.980743",
+      "type": "mouse_click",
+      "x": 805,
+      "y": 690,
+      "window_title": "停止录制确认",
+      "element_type": "other",
+      "element_content": "TkChild",
+      "detail": "Mouse left Click",
+      "operation_category": "",
+      "show_behavior_marker": true,
+      "window_handle": 4986884,
+      "window_class_name": "TkChild",
+      "window_process_id": 37664,
+      "window_process_name": "python.exe",
+      "window_visible": 1,
+      "window_enabled": 1,
+      "window_active": false,
+      "control_handle": 4986884,
+      "control_class_name": "TkChild",
+      "control_text": "",
+      "application_name": "Advanced Computer Operation Recorder",
+      "rect": [
+        767,
+        674,
+        847,
+        701
+      ],
+      "relative_coordinates": {
+        "x": 767,
+        "y": 674,
+        "width": 80,
+        "height": 27
+      },
+      "element_confidence": 0.9,
+      "element_state": {
+        "window_handle": 4986884,
+        "control_handle": 4986884
+      }
+    },
+    {
+      "time": "2026-04-02T17:28:16.100785",
+      "type": "mouse_move",
+      "x": 804,
+      "y": 689,
+      "window_title": "Advanced Computer Operation Recorder",
+      "element_type": "other",
+      "element_content": "TkChild",
+      "detail": "Mouse at (804, 689)",
+      "operation_category": "",
+      "show_behavior_marker": true,
+      "window_handle": 3935976,
+      "window_class_name": "TkChild",
+      "window_process_id": 37664,
+      "window_process_name": "python.exe",
+      "window_visible": 1,
+      "window_enabled": 1,
+      "window_active": false,
+      "control_handle": 3935976,
+      "control_class_name": "TkChild",
+      "control_text": "",
+      "application_name": "Advanced Computer Operation Recorder",
+      "rect": [
+        238,
+        490,
+        1194,
+        708
+      ],
+      "relative_coordinates": {
+        "x": 238,
+        "y": 490,
+        "width": 956,
+        "height": 218
+      },
+      "element_confidence": 0.9,
+      "element_state": {
+        "window_handle": 3935976,
+        "control_handle": 3935976
+      }
+    },
+    {
+      "time": "2026-04-02T17:28:17.029383",
+      "type": "mouse_move",
+      "x": 414,
+      "y": 284,
+      "window_title": "Advanced Computer Operation Recorder",
+      "element_type": "other",
+      "element_content": "TkChild",
+      "detail": "Mouse at (414, 284)",
+      "operation_category": "",
+      "show_behavior_marker": true,
+      "window_handle": 2427312,
+      "window_class_name": "TkChild",
+      "window_process_id": 37664,
+      "window_process_name": "python.exe",
+      "window_visible": 1,
+      "window_enabled": 1,
+      "window_active": false,
+      "control_handle": 2427312,
+      "control_class_name": "TkChild",
+      "control_text": "",
+      "application_name": "Advanced Computer Operation Recorder",
+      "rect": [
+        350,
+        278,
+        454,
+        305
+      ],
+      "relative_coordinates": {
+        "x": 350,
+        "y": 278,
+        "width": 104,
+        "height": 27
+      },
+      "element_confidence": 0.9,
+      "element_state": {
+        "window_handle": 2427312,
+        "control_handle": 2427312
+      }
+    },
+    {
+      "time": "2026-04-02T17:28:17.854401",
+      "type": "mouse_click",
+      "x": 414,
+      "y": 284,
+      "window_title": "Advanced Computer Operation Recorder",
+      "element_type": "other",
+      "element_content": "TkChild",
+      "detail": "Mouse left Click",
+      "operation_category": "",
+      "show_behavior_marker": true,
+      "window_handle": 2427312,
+      "window_class_name": "TkChild",
+      "window_process_id": 37664,
+      "window_process_name": "python.exe",
+      "window_visible": 1,
+      "window_enabled": 1,
+      "window_active": false,
+      "control_handle": 2427312,
+      "control_class_name": "TkChild",
+      "control_text": "",
+      "application_name": "Advanced Computer Operation Recorder",
+      "rect": [
+        350,
+        278,
+        454,
+        305
+      ],
+      "relative_coordinates": {
+        "x": 350,
+        "y": 278,
+        "width": 104,
+        "height": 27
+      },
+      "element_confidence": 0.9,
+      "element_state": {
+        "window_handle": 2427312,
+        "control_handle": 2427312
+      }
+    },
+    {
+      "time": "2026-04-02T17:28:21.818825",
+      "type": "mouse_move",
+      "x": 431,
+      "y": 292,
+      "window_title": "Advanced Computer Operation Recorder",
+      "element_type": "other",
+      "element_content": "TkChild",
+      "detail": "Mouse at (431, 292)",
+      "operation_category": "",
+      "show_behavior_marker": true,
+      "window_handle": 2427312,
+      "window_class_name": "TkChild",
+      "window_process_id": 37664,
+      "window_process_name": "python.exe",
+      "window_visible": 1,
+      "window_enabled": 1,
+      "window_active": false,
+      "control_handle": 2427312,
+      "control_class_name": "TkChild",
+      "control_text": "",
+      "application_name": "Advanced Computer Operation Recorder",
+      "rect": [
+        350,
+        278,
+        454,
+        305
+      ],
+      "relative_coordinates": {
+        "x": 350,
+        "y": 278,
+        "width": 104,
+        "height": 27
+      },
+      "element_confidence": 0.9,
+      "element_state": {
+        "window_handle": 2427312,
+        "control_handle": 2427312
+      }
+    },
+    {
+      "time": "2026-04-02T17:28:24.173528",
+      "type": "mouse_move",
+      "x": 531,
+      "y": 286,
+      "window_title": "Advanced Computer Operation Recorder",
+      "element_type": "other",
+      "element_content": "TkChild",
+      "detail": "Mouse at (531, 286)",
+      "operation_category": "",
+      "show_behavior_marker": true,
+      "window_handle": 8786416,
+      "window_class_name": "TkChild",
+      "window_process_id": 37664,
+      "window_process_name": "python.exe",
+      "window_visible": 1,
+      "window_enabled": 1,
+      "window_active": false,
+      "control_handle": 8786416,
+      "control_class_name": "TkChild",
+      "control_text": "",
+      "application_name": "Advanced Computer Operation Recorder",
+      "rect": [
+        464,
+        278,
+        561,
+        305
+      ],
+      "relative_coordinates": {
+        "x": 464,
+        "y": 278,
+        "width": 97,
+        "height": 27
+      },
+      "element_confidence": 0.9,
+      "element_state": {
+        "window_handle": 8786416,
+        "control_handle": 8786416
+      }
+    },
+    {
+      "time": "2026-04-02T17:28:25.246237",
+      "type": "mouse_click",
+      "x": 531,
+      "y": 286,
+      "window_title": "Advanced Computer Operation Recorder",
+      "element_type": "other",
+      "element_content": "TkChild",
+      "detail": "Mouse left Click",
+      "operation_category": "",
+      "show_behavior_marker": true,
+      "window_handle": 8786416,
+      "window_class_name": "TkChild",
+      "window_process_id": 37664,
+      "window_process_name": "python.exe",
+      "window_visible": 1,
+      "window_enabled": 1,
+      "window_active": false,
+      "control_handle": 8786416,
+      "control_class_name": "TkChild",
+      "control_text": "",
+      "application_name": "Advanced Computer Operation Recorder",
+      "rect": [
+        464,
+        278,
+        561,
+        305
+      ],
+      "relative_coordinates": {
+        "x": 464,
+        "y": 278,
+        "width": 97,
+        "height": 27
+      },
+      "element_confidence": 0.9,
+      "element_state": {
+        "window_handle": 8786416,
+        "control_handle": 8786416
+      }
+    },
+    {
+      "time": "2026-04-02T17:28:25.527025",
+      "type": "mouse_move",
+      "x": 530,
+      "y": 286,
+      "window_title": "Advanced Computer Operation Recorder",
+      "element_type": "other",
+      "element_content": "TkChild",
+      "detail": "Mouse at (530, 286)",
+      "operation_category": "",
+      "show_behavior_marker": true,
+      "window_handle": 8786416,
+      "window_class_name": "TkChild",
+      "window_process_id": 37664,
+      "window_process_name": "python.exe",
+      "window_visible": 1,
+      "window_enabled": 1,
+      "window_active": false,
+      "control_handle": 8786416,
+      "control_class_name": "TkChild",
+      "control_text": "",
+      "application_name": "Advanced Computer Operation Recorder",
+      "rect": [
+        464,
+        278,
+        561,
+        305
+      ],
+      "relative_coordinates": {
+        "x": 464,
+        "y": 278,
+        "width": 97,
+        "height": 27
+      },
+      "element_confidence": 0.9,
+      "element_state": {
+        "window_handle": 8786416,
+        "control_handle": 8786416
+      }
+    },
+    {
+      "time": "2026-04-02T17:28:26.443312",
+      "type": "mouse_move",
+      "x": 907,
+      "y": 687,
+      "window_title": "停止录制确认",
+      "element_type": "other",
+      "element_content": "TkChild",
+      "detail": "Mouse at (907, 687)",
+      "operation_category": "",
+      "show_behavior_marker": true,
+      "window_handle": 2952352,
+      "window_class_name": "TkChild",
+      "window_process_id": 37664,
+      "window_process_name": "python.exe",
+      "window_visible": 1,
+      "window_enabled": 1,
+      "window_active": false,
+      "control_handle": 2952352,
+      "control_class_name": "TkChild",
+      "control_text": "",
+      "application_name": "Advanced Computer Operation Recorder",
+      "rect": [
+        857,
+        674,
+        951,
+        701
+      ],
+      "relative_coordinates": {
+        "x": 857,
+        "y": 674,
+        "width": 94,
+        "height": 27
+      },
+      "element_confidence": 0.9,
+      "element_state": {
+        "window_handle": 2952352,
+        "control_handle": 2952352
+      }
+    },
+    {
+      "time": "2026-04-02T17:28:26.621801",
+      "type": "mouse_click",
+      "x": 907,
+      "y": 687,
+      "window_title": "停止录制确认",
+      "element_type": "other",
+      "element_content": "TkChild",
+      "detail": "Mouse left Click",
+      "operation_category": "",
+      "show_behavior_marker": true,
+      "window_handle": 2952352,
+      "window_class_name": "TkChild",
+      "window_process_id": 37664,
+      "window_process_name": "python.exe",
+      "window_visible": 1,
+      "window_enabled": 1,
+      "window_active": false,
+      "control_handle": 2952352,
+      "control_class_name": "TkChild",
+      "control_text": "",
+      "application_name": "Advanced Computer Operation Recorder",
+      "rect": [
+        857,
+        674,
+        951,
+        701
+      ],
+      "relative_coordinates": {
+        "x": 857,
+        "y": 674,
+        "width": 94,
+        "height": 27
+      },
+      "element_confidence": 0.9,
+      "element_state": {
+        "window_handle": 2952352,
+        "control_handle": 2952352
+      }
+    }
+  ]
+}

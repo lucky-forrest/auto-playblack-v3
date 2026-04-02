@@ -1,0 +1,43 @@
+2026-04-02 17:58:21,677 - socket_client.config.settings - ERROR - 发生未预期的错误: CSVParseError: JSON和CSV解析均失败。JSON错误: CSVParseError: JSON解析过程发生错误: [Errno 2] No such file or directory: 'documents\\录制会话_20260402_100410\\录制会话_20260402_172756_operation_log.csv', CSV错误: CSVParseError: CSV解析过程发生错误: CSVParseError: CSV文件不存在: documents\录制会话_20260402_100410\录制会话_20260402_172756_operation_log.csv
+Traceback (most recent call last):
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\parsers\csv_parser.py", line 89, in parse_json
+    with open(self.csv_path, 'r', encoding='utf-8-sig') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'documents\\录制会话_20260402_100410\\录制会话_20260402_172756_operation_log.csv'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\parsers\csv_parser.py", line 252, in parse_operation_log
+    return parser.parse_json()
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\parsers\csv_parser.py", line 125, in parse_json
+    raise CSVParseError(f"JSON解析过程发生错误: {e}")
+socket_client.utils.exceptions.CSVParseError: CSVParseError: JSON解析过程发生错误: [Errno 2] No such file or directory: 'documents\\录制会话_20260402_100410\\录制会话_20260402_172756_operation_log.csv'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\parsers\csv_parser.py", line 56, in parse
+    raise CSVParseError(f"CSV文件不存在: {self.csv_path}")
+socket_client.utils.exceptions.CSVParseError: CSVParseError: CSV文件不存在: documents\录制会话_20260402_100410\录制会话_20260402_172756_operation_log.csv
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\parsers\csv_parser.py", line 256, in parse_operation_log
+    return parser.parse()
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\parsers\csv_parser.py", line 75, in parse
+    raise CSVParseError(f"CSV解析过程发生错误: {e}")
+socket_client.utils.exceptions.CSVParseError: CSVParseError: CSV解析过程发生错误: CSVParseError: CSV文件不存在: documents\录制会话_20260402_100410\录制会话_20260402_172756_operation_log.csv
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\main.py", line 158, in main
+    result = execute_csv_replay(
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\executor\replay_engine.py", line 237, in execute_csv_replay
+    engine = OperationReplayEngine(csv_path)
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\executor\replay_engine.py", line 40, in __init__
+    self.parser = parse_operation_log(csv_path)
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\parsers\csv_parser.py", line 258, in parse_operation_log
+    raise CSVParseError(
+socket_client.utils.exceptions.CSVParseError: CSVParseError: JSON和CSV解析均失败。JSON错误: CSVParseError: JSON解析过程发生错误: [Errno 2] No such file or directory: 'documents\\录制会话_20260402_100410\\录制会话_20260402_172756_operation_log.csv', CSV错误: CSVParseError: CSV解析过程发生错误: CSVParseError: CSV文件不存在: documents\录制会话_20260402_100410\录制会话_20260402_172756_operation_log.csv

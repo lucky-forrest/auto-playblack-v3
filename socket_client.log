@@ -1,0 +1,1533 @@
+2026-04-02 16:41:42,487 - socket_client.config.settings - INFO - CSV文件解析成功: documents\录制会话_20260402_100410\录制会话_20260402_100410_operation_log.csv，共解析 18 条操作
+2026-04-02 16:41:42,487 - socket_client.config.settings - ERROR - 发生未预期的错误: name 'time' is not defined
+Traceback (most recent call last):
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\main.py", line 158, in main
+    result = execute_csv_replay(
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\executor\replay_engine.py", line 235, in execute_csv_replay
+    return engine.start_replay(callback)
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\executor\replay_engine.py", line 92, in start_replay
+    execution_start_time=time.time()
+NameError: name 'time' is not defined
+2026-04-02 16:42:17,052 - socket_client.config.settings - INFO - CSV文件解析成功: documents\录制会话_20260402_100410\录制会话_20260402_100410_operation_log.csv，共解析 18 条操作
+2026-04-02 16:42:17,052 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:42:17,052 - socket_client.config.settings - INFO - 操作回放开始
+2026-04-02 16:42:17,052 - socket_client.config.settings - INFO - 操作记录文件: None
+2026-04-02 16:42:17,052 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:42:17,055 - socket_client.config.settings - INFO - 开始加载操作记录: None
+2026-04-02 16:42:17,055 - socket_client.config.settings - ERROR - 加载操作记录失败: 'list' object has no attribute 'get_operations'
+2026-04-02 16:42:17,055 - socket_client.config.settings - ERROR - 回放过程中发生错误: OperationExecuteError: 加载操作记录失败: 'list' object has no attribute 'get_operations'
+Traceback (most recent call last):
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\executor\replay_engine.py", line 60, in load_operations
+    operations = self.parser.get_operations()
+AttributeError: 'list' object has no attribute 'get_operations'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\executor\replay_engine.py", line 103, in start_replay
+    operations = self.load_operations()
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\executor\replay_engine.py", line 70, in load_operations
+    raise OperationExecuteError(f"加载操作记录失败: {e}")
+socket_client.utils.exceptions.OperationExecuteError: OperationExecuteError: 加载操作记录失败: 'list' object has no attribute 'get_operations'
+2026-04-02 16:42:17,055 - socket_client.config.settings - INFO - 操作执行器已停止
+2026-04-02 16:42:17,055 - socket_client.config.settings - ERROR - 操作回放失败: OperationExecuteError: 回放过程中发生错误: OperationExecuteError: 加载操作记录失败: 'list' object has no attribute 'get_operations'
+2026-04-02 16:42:38,309 - socket_client.config.settings - INFO - CSV文件解析成功: documents\录制会话_20260402_100410\录制会话_20260402_100410_operation_log.csv，共解析 18 条操作
+2026-04-02 16:42:38,309 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:42:38,309 - socket_client.config.settings - INFO - 操作回放开始
+2026-04-02 16:42:38,309 - socket_client.config.settings - INFO - 操作记录文件: None
+2026-04-02 16:42:38,309 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:42:38,309 - socket_client.config.settings - INFO - 开始加载操作记录: None
+2026-04-02 16:42:38,309 - socket_client.config.settings - INFO - 加载完成，共 18 条操作记录
+2026-04-02 16:42:38,309 - socket_client.config.settings - INFO - 开始执行 18 条操作...
+2026-04-02 16:42:38,309 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -23907.238秒，使用0.0秒
+2026-04-02 16:42:38,309 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (725, 689), 错误: name 'autoit' is not defined
+2026-04-02 16:42:38,309 - socket_client.config.settings - ERROR - 回放过程中发生错误: 'OperationExecuteError' object has no attribute 'error_details'
+Traceback (most recent call last):
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\executor\operation_executor.py", line 51, in execute_operation
+    self._activate_window(window_title)
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\executor\operation_executor.py", line 169, in _activate_window
+    if autoit.win_exists(window_title):
+NameError: name 'autoit' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\executor\replay_engine.py", line 124, in start_replay
+    success = self.executor.execute_operation(
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\executor\operation_executor.py", line 75, in execute_operation
+    raise OperationExecuteError(error_msg, operation.event_type, (operation.x, operation.y))
+socket_client.utils.exceptions.OperationExecuteError: OperationExecuteError: 操作执行失败: mouse_move, 坐标: (725, 689), 错误: name 'autoit' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\executor\replay_engine.py", line 149, in start_replay
+    error_details=f"{e.error_details}"
+AttributeError: 'OperationExecuteError' object has no attribute 'error_details'
+2026-04-02 16:42:38,314 - socket_client.config.settings - INFO - 操作执行器已停止
+2026-04-02 16:42:38,314 - socket_client.config.settings - ERROR - 操作回放失败: OperationExecuteError: 回放过程中发生错误: 'OperationExecuteError' object has no attribute 'error_details'
+2026-04-02 16:47:39,551 - socket_client.config.settings - INFO - CSV文件解析成功: documents\录制会话_20260402_100410\录制会话_20260402_100410_operation_log.csv，共解析 18 条操作
+2026-04-02 16:47:39,551 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:47:39,551 - socket_client.config.settings - INFO - 操作回放开始
+2026-04-02 16:47:39,551 - socket_client.config.settings - INFO - 操作记录文件: None
+2026-04-02 16:47:39,551 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:47:39,551 - socket_client.config.settings - INFO - 开始加载操作记录: None
+2026-04-02 16:47:39,551 - socket_client.config.settings - INFO - 加载完成，共 18 条操作记录
+2026-04-02 16:47:39,551 - socket_client.config.settings - INFO - 开始执行 18 条操作...
+2026-04-02 16:47:39,551 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24208.480秒，使用0.0秒
+2026-04-02 16:47:39,556 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (725, 689), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,556 - socket_client.config.settings - ERROR - [1/19] 操作失败: 操作执行失败: mouse_move, 坐标: (725, 689), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,556 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24205.274秒，使用0.0秒
+2026-04-02 16:47:39,556 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (575, 288), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,556 - socket_client.config.settings - ERROR - [2/20] 操作失败: 操作执行失败: mouse_move, 坐标: (575, 288), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,556 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24205.168秒，使用0.0秒
+2026-04-02 16:47:39,556 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,556 - socket_client.config.settings - ERROR - [3/21] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,556 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24205.069秒，使用0.0秒
+2026-04-02 16:47:39,556 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (575, 289), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,561 - socket_client.config.settings - ERROR - [4/22] 操作失败: 操作执行失败: mouse_move, 坐标: (575, 289), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,561 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24202.590秒，使用0.0秒
+2026-04-02 16:47:39,561 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (798, 219), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,561 - socket_client.config.settings - ERROR - [5/23] 操作失败: 操作执行失败: mouse_move, 坐标: (798, 219), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,561 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24202.437秒，使用0.0秒
+2026-04-02 16:47:39,561 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,561 - socket_client.config.settings - ERROR - [6/24] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,561 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24196.669秒，使用0.0秒
+2026-04-02 16:47:39,561 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (817, 216), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,561 - socket_client.config.settings - ERROR - [7/25] 操作失败: 操作执行失败: mouse_move, 坐标: (817, 216), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,561 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24194.667秒，使用0.0秒
+2026-04-02 16:47:39,566 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (924, 222), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,566 - socket_client.config.settings - ERROR - [8/26] 操作失败: 操作执行失败: mouse_move, 坐标: (924, 222), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,566 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24194.504秒，使用0.0秒
+2026-04-02 16:47:39,566 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,566 - socket_client.config.settings - ERROR - [9/27] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,566 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24194.216秒，使用0.0秒
+2026-04-02 16:47:39,566 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (924, 222), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,566 - socket_client.config.settings - ERROR - [10/28] 操作失败: 操作执行失败: mouse_move, 坐标: (924, 222), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,566 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24192.973秒，使用0.0秒
+2026-04-02 16:47:39,572 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (1223, 614), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,572 - socket_client.config.settings - ERROR - [11/29] 操作失败: 操作执行失败: mouse_move, 坐标: (1223, 614), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,572 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24192.831秒，使用0.0秒
+2026-04-02 16:47:39,572 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,572 - socket_client.config.settings - ERROR - [12/30] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,572 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24192.615秒，使用0.0秒
+2026-04-02 16:47:39,572 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (1223, 614), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,572 - socket_client.config.settings - ERROR - [13/31] 操作失败: 操作执行失败: mouse_move, 坐标: (1223, 614), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,572 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24191.086秒，使用0.0秒
+2026-04-02 16:47:39,572 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (938, 218), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,572 - socket_client.config.settings - ERROR - [14/32] 操作失败: 操作执行失败: mouse_move, 坐标: (938, 218), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,572 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24191.021秒，使用0.0秒
+2026-04-02 16:47:39,577 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,577 - socket_client.config.settings - ERROR - [15/33] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,577 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24190.796秒，使用0.0秒
+2026-04-02 16:47:39,577 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (938, 218), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,577 - socket_client.config.settings - ERROR - [16/34] 操作失败: 操作执行失败: mouse_move, 坐标: (938, 218), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,577 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24189.707秒，使用0.0秒
+2026-04-02 16:47:39,580 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (1345, 615), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,580 - socket_client.config.settings - ERROR - [17/35] 操作失败: 操作执行失败: mouse_move, 坐标: (1345, 615), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,580 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24188.758秒，使用0.0秒
+2026-04-02 16:47:39,582 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,582 - socket_client.config.settings - ERROR - [18/36] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:39,582 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:47:39,582 - socket_client.config.settings - INFO - 操作回放完成
+2026-04-02 16:47:39,582 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:47:39,582 - socket_client.config.settings - INFO - 总操作数: 36
+2026-04-02 16:47:39,582 - socket_client.config.settings - INFO - 成功数: 0
+2026-04-02 16:47:39,582 - socket_client.config.settings - INFO - 失败数: 18
+2026-04-02 16:47:39,582 - socket_client.config.settings - INFO - 成功率: 0.00%
+2026-04-02 16:47:39,582 - socket_client.config.settings - INFO - 总耗时: 0.032秒
+2026-04-02 16:47:39,582 - socket_client.config.settings - INFO - 平均每条操作: 0.001秒
+2026-04-02 16:47:39,582 - socket_client.config.settings - WARNING - ============================================================
+2026-04-02 16:47:39,582 - socket_client.config.settings - WARNING - 失败的操作详情:
+2026-04-02 16:47:39,582 - socket_client.config.settings - WARNING - ============================================================
+2026-04-02 16:47:39,582 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (725, 689)
+2026-04-02 16:47:39,582 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (575, 288)
+2026-04-02 16:47:39,582 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:47:39,582 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (575, 289)
+2026-04-02 16:47:39,582 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (798, 219)
+2026-04-02 16:47:39,582 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:47:39,582 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (817, 216)
+2026-04-02 16:47:39,582 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (924, 222)
+2026-04-02 16:47:39,582 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:47:39,582 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (924, 222)
+2026-04-02 16:47:39,582 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (1223, 614)
+2026-04-02 16:47:39,582 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:47:39,582 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (1223, 614)
+2026-04-02 16:47:39,582 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (938, 218)
+2026-04-02 16:47:39,582 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:47:39,582 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (938, 218)
+2026-04-02 16:47:39,582 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (1345, 615)
+2026-04-02 16:47:39,582 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:47:39,582 - socket_client.config.settings - INFO - 操作执行器已停止
+2026-04-02 16:47:51,401 - socket_client.config.settings - INFO - CSV文件解析成功: documents\录制会话_20260402_100410\录制会话_20260402_100410_operation_log.csv，共解析 18 条操作
+2026-04-02 16:47:51,406 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:47:51,406 - socket_client.config.settings - INFO - 操作回放开始
+2026-04-02 16:47:51,406 - socket_client.config.settings - INFO - 操作记录文件: None
+2026-04-02 16:47:51,406 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:47:51,406 - socket_client.config.settings - INFO - 开始加载操作记录: None
+2026-04-02 16:47:51,406 - socket_client.config.settings - INFO - 加载完成，共 18 条操作记录
+2026-04-02 16:47:51,406 - socket_client.config.settings - INFO - 开始执行 18 条操作...
+2026-04-02 16:47:51,406 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24220.336秒，使用0.0秒
+2026-04-02 16:47:51,406 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (725, 689), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,406 - socket_client.config.settings - ERROR - [1/19] 操作失败: 操作执行失败: mouse_move, 坐标: (725, 689), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,406 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24217.124秒，使用0.0秒
+2026-04-02 16:47:51,406 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (575, 288), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,411 - socket_client.config.settings - ERROR - [2/20] 操作失败: 操作执行失败: mouse_move, 坐标: (575, 288), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,411 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24217.024秒，使用0.0秒
+2026-04-02 16:47:51,411 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,411 - socket_client.config.settings - ERROR - [3/21] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,411 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24216.925秒，使用0.0秒
+2026-04-02 16:47:51,411 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (575, 289), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,413 - socket_client.config.settings - ERROR - [4/22] 操作失败: 操作执行失败: mouse_move, 坐标: (575, 289), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,413 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24214.442秒，使用0.0秒
+2026-04-02 16:47:51,413 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (798, 219), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,413 - socket_client.config.settings - ERROR - [5/23] 操作失败: 操作执行失败: mouse_move, 坐标: (798, 219), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,413 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24214.289秒，使用0.0秒
+2026-04-02 16:47:51,413 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,413 - socket_client.config.settings - ERROR - [6/24] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,413 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24208.521秒，使用0.0秒
+2026-04-02 16:47:51,415 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (817, 216), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,415 - socket_client.config.settings - ERROR - [7/25] 操作失败: 操作执行失败: mouse_move, 坐标: (817, 216), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,415 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24206.521秒，使用0.0秒
+2026-04-02 16:47:51,417 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (924, 222), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,417 - socket_client.config.settings - ERROR - [8/26] 操作失败: 操作执行失败: mouse_move, 坐标: (924, 222), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,417 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24206.354秒，使用0.0秒
+2026-04-02 16:47:51,417 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,417 - socket_client.config.settings - ERROR - [9/27] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,417 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24206.067秒，使用0.0秒
+2026-04-02 16:47:51,419 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (924, 222), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,419 - socket_client.config.settings - ERROR - [10/28] 操作失败: 操作执行失败: mouse_move, 坐标: (924, 222), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,419 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24204.825秒，使用0.0秒
+2026-04-02 16:47:51,419 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (1223, 614), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,419 - socket_client.config.settings - ERROR - [11/29] 操作失败: 操作执行失败: mouse_move, 坐标: (1223, 614), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,419 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24204.679秒，使用0.0秒
+2026-04-02 16:47:51,422 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,422 - socket_client.config.settings - ERROR - [12/30] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,422 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24204.465秒，使用0.0秒
+2026-04-02 16:47:51,422 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (1223, 614), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,422 - socket_client.config.settings - ERROR - [13/31] 操作失败: 操作执行失败: mouse_move, 坐标: (1223, 614), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,422 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24202.936秒，使用0.0秒
+2026-04-02 16:47:51,425 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (938, 218), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,425 - socket_client.config.settings - ERROR - [14/32] 操作失败: 操作执行失败: mouse_move, 坐标: (938, 218), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,425 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24202.874秒，使用0.0秒
+2026-04-02 16:47:51,426 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,426 - socket_client.config.settings - ERROR - [15/33] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,426 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24202.644秒，使用0.0秒
+2026-04-02 16:47:51,427 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (938, 218), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,427 - socket_client.config.settings - ERROR - [16/34] 操作失败: 操作执行失败: mouse_move, 坐标: (938, 218), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,427 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24201.557秒，使用0.0秒
+2026-04-02 16:47:51,429 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (1345, 615), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,429 - socket_client.config.settings - ERROR - [17/35] 操作失败: 操作执行失败: mouse_move, 坐标: (1345, 615), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,429 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24200.607秒，使用0.0秒
+2026-04-02 16:47:51,430 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,430 - socket_client.config.settings - ERROR - [18/36] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: module 'pygetwindow' has no attribute 'exceptions'
+2026-04-02 16:47:51,430 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:47:51,430 - socket_client.config.settings - INFO - 操作回放完成
+2026-04-02 16:47:51,430 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:47:51,430 - socket_client.config.settings - INFO - 总操作数: 36
+2026-04-02 16:47:51,430 - socket_client.config.settings - INFO - 成功数: 0
+2026-04-02 16:47:51,430 - socket_client.config.settings - INFO - 失败数: 18
+2026-04-02 16:47:51,430 - socket_client.config.settings - INFO - 成功率: 0.00%
+2026-04-02 16:47:51,430 - socket_client.config.settings - INFO - 总耗时: 0.024秒
+2026-04-02 16:47:51,430 - socket_client.config.settings - INFO - 平均每条操作: 0.001秒
+2026-04-02 16:47:51,430 - socket_client.config.settings - WARNING - ============================================================
+2026-04-02 16:47:51,430 - socket_client.config.settings - WARNING - 失败的操作详情:
+2026-04-02 16:47:51,430 - socket_client.config.settings - WARNING - ============================================================
+2026-04-02 16:47:51,430 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (725, 689)
+2026-04-02 16:47:51,430 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (575, 288)
+2026-04-02 16:47:51,430 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:47:51,430 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (575, 289)
+2026-04-02 16:47:51,430 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (798, 219)
+2026-04-02 16:47:51,430 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:47:51,430 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (817, 216)
+2026-04-02 16:47:51,430 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (924, 222)
+2026-04-02 16:47:51,430 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:47:51,430 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (924, 222)
+2026-04-02 16:47:51,430 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (1223, 614)
+2026-04-02 16:47:51,430 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:47:51,430 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (1223, 614)
+2026-04-02 16:47:51,430 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (938, 218)
+2026-04-02 16:47:51,430 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:47:51,430 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (938, 218)
+2026-04-02 16:47:51,430 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (1345, 615)
+2026-04-02 16:47:51,430 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:47:51,430 - socket_client.config.settings - INFO - 操作执行器已停止
+2026-04-02 16:48:10,352 - socket_client.config.settings - INFO - CSV文件解析成功: documents\录制会话_20260402_100410\录制会话_20260402_100410_operation_log.csv，共解析 18 条操作
+2026-04-02 16:48:10,352 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:48:10,352 - socket_client.config.settings - INFO - 操作回放开始
+2026-04-02 16:48:10,352 - socket_client.config.settings - INFO - 操作记录文件: None
+2026-04-02 16:48:10,352 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:48:10,352 - socket_client.config.settings - INFO - 开始加载操作记录: None
+2026-04-02 16:48:10,352 - socket_client.config.settings - INFO - 加载完成，共 18 条操作记录
+2026-04-02 16:48:10,352 - socket_client.config.settings - INFO - 开始执行 18 条操作...
+2026-04-02 16:48:10,352 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24239.282秒，使用0.0秒
+2026-04-02 16:48:10,357 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (725, 689), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:10,357 - socket_client.config.settings - ERROR - [1/19] 操作失败: 操作执行失败: mouse_move, 坐标: (725, 689), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:10,357 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24236.075秒，使用0.0秒
+2026-04-02 16:48:10,357 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (575, 288), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:10,357 - socket_client.config.settings - ERROR - [2/20] 操作失败: 操作执行失败: mouse_move, 坐标: (575, 288), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:10,357 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24235.970秒，使用0.0秒
+2026-04-02 16:48:10,357 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:10,357 - socket_client.config.settings - ERROR - [3/21] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:10,357 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24235.871秒，使用0.0秒
+2026-04-02 16:48:10,363 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (575, 289), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:10,363 - socket_client.config.settings - ERROR - [4/22] 操作失败: 操作执行失败: mouse_move, 坐标: (575, 289), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:10,363 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24233.391秒，使用0.0秒
+2026-04-02 16:48:10,363 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (798, 219), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:10,363 - socket_client.config.settings - ERROR - [5/23] 操作失败: 操作执行失败: mouse_move, 坐标: (798, 219), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:10,363 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24233.238秒，使用0.0秒
+2026-04-02 16:48:10,363 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:10,363 - socket_client.config.settings - ERROR - [6/24] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:10,363 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24227.471秒，使用0.0秒
+2026-04-02 16:48:10,363 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (817, 216), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:10,363 - socket_client.config.settings - ERROR - [7/25] 操作失败: 操作执行失败: mouse_move, 坐标: (817, 216), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:10,363 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24225.468秒，使用0.0秒
+2026-04-02 16:48:10,363 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (924, 222), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:10,363 - socket_client.config.settings - ERROR - [8/26] 操作失败: 操作执行失败: mouse_move, 坐标: (924, 222), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:10,363 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24225.300秒，使用0.0秒
+2026-04-02 16:48:10,368 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:10,368 - socket_client.config.settings - ERROR - [9/27] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:10,368 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24225.018秒，使用0.0秒
+2026-04-02 16:48:10,368 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (924, 222), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:10,368 - socket_client.config.settings - ERROR - [10/28] 操作失败: 操作执行失败: mouse_move, 坐标: (924, 222), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:10,368 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24223.774秒，使用0.0秒
+2026-04-02 16:48:10,368 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (1223, 614), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:48:10,368 - socket_client.config.settings - ERROR - [11/29] 操作失败: 操作执行失败: mouse_move, 坐标: (1223, 614), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:48:10,368 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24223.628秒，使用0.0秒
+2026-04-02 16:48:10,368 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:48:10,368 - socket_client.config.settings - ERROR - [12/30] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:48:10,368 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24223.411秒，使用0.0秒
+2026-04-02 16:48:10,368 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (1223, 614), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:10,368 - socket_client.config.settings - ERROR - [13/31] 操作失败: 操作执行失败: mouse_move, 坐标: (1223, 614), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:10,368 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24221.882秒，使用0.0秒
+2026-04-02 16:48:10,373 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (938, 218), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:10,373 - socket_client.config.settings - ERROR - [14/32] 操作失败: 操作执行失败: mouse_move, 坐标: (938, 218), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:10,373 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24221.823秒，使用0.0秒
+2026-04-02 16:48:10,373 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:10,373 - socket_client.config.settings - ERROR - [15/33] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:10,373 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24221.592秒，使用0.0秒
+2026-04-02 16:48:10,373 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (938, 218), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:10,373 - socket_client.config.settings - ERROR - [16/34] 操作失败: 操作执行失败: mouse_move, 坐标: (938, 218), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:10,373 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24220.503秒，使用0.0秒
+2026-04-02 16:48:10,379 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (1345, 615), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:48:10,379 - socket_client.config.settings - ERROR - [17/35] 操作失败: 操作执行失败: mouse_move, 坐标: (1345, 615), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:48:10,379 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24219.557秒，使用0.0秒
+2026-04-02 16:48:10,379 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:48:10,379 - socket_client.config.settings - ERROR - [18/36] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:48:10,379 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:48:10,379 - socket_client.config.settings - INFO - 操作回放完成
+2026-04-02 16:48:10,379 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:48:10,379 - socket_client.config.settings - INFO - 总操作数: 36
+2026-04-02 16:48:10,379 - socket_client.config.settings - INFO - 成功数: 0
+2026-04-02 16:48:10,379 - socket_client.config.settings - INFO - 失败数: 18
+2026-04-02 16:48:10,379 - socket_client.config.settings - INFO - 成功率: 0.00%
+2026-04-02 16:48:10,379 - socket_client.config.settings - INFO - 总耗时: 0.026秒
+2026-04-02 16:48:10,379 - socket_client.config.settings - INFO - 平均每条操作: 0.001秒
+2026-04-02 16:48:10,379 - socket_client.config.settings - WARNING - ============================================================
+2026-04-02 16:48:10,379 - socket_client.config.settings - WARNING - 失败的操作详情:
+2026-04-02 16:48:10,379 - socket_client.config.settings - WARNING - ============================================================
+2026-04-02 16:48:10,379 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (725, 689)
+2026-04-02 16:48:10,379 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (575, 288)
+2026-04-02 16:48:10,379 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:48:10,379 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (575, 289)
+2026-04-02 16:48:10,379 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (798, 219)
+2026-04-02 16:48:10,379 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:48:10,379 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (817, 216)
+2026-04-02 16:48:10,379 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (924, 222)
+2026-04-02 16:48:10,379 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:48:10,379 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (924, 222)
+2026-04-02 16:48:10,379 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (1223, 614)
+2026-04-02 16:48:10,379 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:48:10,379 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (1223, 614)
+2026-04-02 16:48:10,379 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (938, 218)
+2026-04-02 16:48:10,379 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:48:10,379 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (938, 218)
+2026-04-02 16:48:10,379 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (1345, 615)
+2026-04-02 16:48:10,379 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:48:10,379 - socket_client.config.settings - INFO - 操作执行器已停止
+2026-04-02 16:48:14,305 - socket_client.config.settings - INFO - CSV文件解析成功: documents\录制会话_20260402_100410\录制会话_20260402_100410_operation_log.csv，共解析 18 条操作
+2026-04-02 16:48:14,305 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:48:14,305 - socket_client.config.settings - INFO - 操作回放开始
+2026-04-02 16:48:14,305 - socket_client.config.settings - INFO - 操作记录文件: None
+2026-04-02 16:48:14,305 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:48:14,305 - socket_client.config.settings - INFO - 开始加载操作记录: None
+2026-04-02 16:48:14,311 - socket_client.config.settings - INFO - 加载完成，共 18 条操作记录
+2026-04-02 16:48:14,311 - socket_client.config.settings - INFO - 开始执行 18 条操作...
+2026-04-02 16:48:14,311 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24243.240秒，使用0.0秒
+2026-04-02 16:48:14,311 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (725, 689), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:14,311 - socket_client.config.settings - ERROR - [1/19] 操作失败: 操作执行失败: mouse_move, 坐标: (725, 689), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:14,311 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24240.028秒，使用0.0秒
+2026-04-02 16:48:14,311 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (575, 288), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:14,311 - socket_client.config.settings - ERROR - [2/20] 操作失败: 操作执行失败: mouse_move, 坐标: (575, 288), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:14,311 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24239.923秒，使用0.0秒
+2026-04-02 16:48:14,316 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:14,316 - socket_client.config.settings - ERROR - [3/21] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:14,316 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24239.829秒，使用0.0秒
+2026-04-02 16:48:14,316 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (575, 289), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:14,316 - socket_client.config.settings - ERROR - [4/22] 操作失败: 操作执行失败: mouse_move, 坐标: (575, 289), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:14,316 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24237.344秒，使用0.0秒
+2026-04-02 16:48:14,316 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (798, 219), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:14,316 - socket_client.config.settings - ERROR - [5/23] 操作失败: 操作执行失败: mouse_move, 坐标: (798, 219), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:14,316 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24237.192秒，使用0.0秒
+2026-04-02 16:48:14,316 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:14,316 - socket_client.config.settings - ERROR - [6/24] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:14,316 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24231.424秒，使用0.0秒
+2026-04-02 16:48:14,316 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (817, 216), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:14,316 - socket_client.config.settings - ERROR - [7/25] 操作失败: 操作执行失败: mouse_move, 坐标: (817, 216), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:14,316 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24229.422秒，使用0.0秒
+2026-04-02 16:48:14,320 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (924, 222), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:14,320 - socket_client.config.settings - ERROR - [8/26] 操作失败: 操作执行失败: mouse_move, 坐标: (924, 222), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:14,320 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24229.258秒，使用0.0秒
+2026-04-02 16:48:14,321 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:14,321 - socket_client.config.settings - ERROR - [9/27] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:14,321 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24228.971秒，使用0.0秒
+2026-04-02 16:48:14,321 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (924, 222), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:14,321 - socket_client.config.settings - ERROR - [10/28] 操作失败: 操作执行失败: mouse_move, 坐标: (924, 222), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:14,321 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24227.728秒，使用0.0秒
+2026-04-02 16:48:14,321 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (1223, 614), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:48:14,321 - socket_client.config.settings - ERROR - [11/29] 操作失败: 操作执行失败: mouse_move, 坐标: (1223, 614), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:48:14,321 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24227.581秒，使用0.0秒
+2026-04-02 16:48:14,321 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:48:14,321 - socket_client.config.settings - ERROR - [12/30] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:48:14,321 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24227.365秒，使用0.0秒
+2026-04-02 16:48:14,321 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (1223, 614), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:14,321 - socket_client.config.settings - ERROR - [13/31] 操作失败: 操作执行失败: mouse_move, 坐标: (1223, 614), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:14,321 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24225.835秒，使用0.0秒
+2026-04-02 16:48:14,321 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (938, 218), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:14,321 - socket_client.config.settings - ERROR - [14/32] 操作失败: 操作执行失败: mouse_move, 坐标: (938, 218), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:14,321 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24225.771秒，使用0.0秒
+2026-04-02 16:48:14,327 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:14,327 - socket_client.config.settings - ERROR - [15/33] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:14,327 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24225.545秒，使用0.0秒
+2026-04-02 16:48:14,327 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (938, 218), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:14,327 - socket_client.config.settings - ERROR - [16/34] 操作失败: 操作执行失败: mouse_move, 坐标: (938, 218), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 16:48:14,327 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24224.456秒，使用0.0秒
+2026-04-02 16:48:14,329 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (1345, 615), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:48:14,329 - socket_client.config.settings - ERROR - [17/35] 操作失败: 操作执行失败: mouse_move, 坐标: (1345, 615), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:48:14,329 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24223.507秒，使用0.0秒
+2026-04-02 16:48:14,330 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:48:14,330 - socket_client.config.settings - ERROR - [18/36] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:48:14,330 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:48:14,330 - socket_client.config.settings - INFO - 操作回放完成
+2026-04-02 16:48:14,330 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:48:14,330 - socket_client.config.settings - INFO - 总操作数: 36
+2026-04-02 16:48:14,330 - socket_client.config.settings - INFO - 成功数: 0
+2026-04-02 16:48:14,330 - socket_client.config.settings - INFO - 失败数: 18
+2026-04-02 16:48:14,330 - socket_client.config.settings - INFO - 成功率: 0.00%
+2026-04-02 16:48:14,330 - socket_client.config.settings - INFO - 总耗时: 0.025秒
+2026-04-02 16:48:14,330 - socket_client.config.settings - INFO - 平均每条操作: 0.001秒
+2026-04-02 16:48:14,330 - socket_client.config.settings - WARNING - ============================================================
+2026-04-02 16:48:14,330 - socket_client.config.settings - WARNING - 失败的操作详情:
+2026-04-02 16:48:14,330 - socket_client.config.settings - WARNING - ============================================================
+2026-04-02 16:48:14,330 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (725, 689)
+2026-04-02 16:48:14,330 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (575, 288)
+2026-04-02 16:48:14,330 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:48:14,330 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (575, 289)
+2026-04-02 16:48:14,330 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (798, 219)
+2026-04-02 16:48:14,330 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:48:14,330 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (817, 216)
+2026-04-02 16:48:14,332 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (924, 222)
+2026-04-02 16:48:14,332 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:48:14,332 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (924, 222)
+2026-04-02 16:48:14,332 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (1223, 614)
+2026-04-02 16:48:14,332 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:48:14,332 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (1223, 614)
+2026-04-02 16:48:14,332 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (938, 218)
+2026-04-02 16:48:14,332 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:48:14,332 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (938, 218)
+2026-04-02 16:48:14,332 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (1345, 615)
+2026-04-02 16:48:14,332 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:48:14,332 - socket_client.config.settings - INFO - 操作执行器已停止
+2026-04-02 16:49:49,538 - socket_client.config.settings - INFO - CSV文件解析成功: documents\录制会话_20260402_100410\录制会话_20260402_100410_operation_log.csv，共解析 18 条操作
+2026-04-02 16:49:49,538 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:49:49,538 - socket_client.config.settings - INFO - 操作回放开始
+2026-04-02 16:49:49,538 - socket_client.config.settings - INFO - 操作记录文件: None
+2026-04-02 16:49:49,538 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:49:49,541 - socket_client.config.settings - INFO - 开始加载操作记录: None
+2026-04-02 16:49:49,541 - socket_client.config.settings - INFO - 加载完成，共 18 条操作记录
+2026-04-02 16:49:49,541 - socket_client.config.settings - INFO - 开始执行 18 条操作...
+2026-04-02 16:49:49,541 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24338.471秒，使用0.0秒
+2026-04-02 16:49:49,764 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24335.481秒，使用0.0秒
+2026-04-02 16:49:49,981 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24335.594秒，使用0.0秒
+2026-04-02 16:49:50,085 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:49:50,085 - socket_client.config.settings - ERROR - [3/21] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:49:50,085 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24335.598秒，使用0.0秒
+2026-04-02 16:49:50,298 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24333.326秒，使用0.0秒
+2026-04-02 16:49:50,515 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24333.391秒，使用0.0秒
+2026-04-02 16:49:50,622 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:49:50,622 - socket_client.config.settings - ERROR - [6/24] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:49:50,622 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24327.730秒，使用0.0秒
+2026-04-02 16:49:50,843 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24325.948秒，使用0.0秒
+2026-04-02 16:49:51,057 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24325.994秒，使用0.0秒
+2026-04-02 16:49:51,159 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:49:51,159 - socket_client.config.settings - ERROR - [9/27] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:49:51,159 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24325.809秒，使用0.0秒
+2026-04-02 16:49:51,365 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24324.771秒，使用0.0秒
+2026-04-02 16:49:51,365 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (1223, 614), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:49:51,365 - socket_client.config.settings - ERROR - [11/29] 操作失败: 操作执行失败: mouse_move, 坐标: (1223, 614), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:49:51,365 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24324.625秒，使用0.0秒
+2026-04-02 16:49:51,365 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:49:51,365 - socket_client.config.settings - ERROR - [12/30] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:49:51,365 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24324.408秒，使用0.0秒
+2026-04-02 16:49:51,585 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24323.099秒，使用0.0秒
+2026-04-02 16:49:51,792 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24323.241秒，使用0.0秒
+2026-04-02 16:49:51,893 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:49:51,893 - socket_client.config.settings - ERROR - [15/33] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:49:51,893 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24323.111秒，使用0.0秒
+2026-04-02 16:49:52,097 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24322.227秒，使用0.0秒
+2026-04-02 16:49:52,097 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (1345, 615), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:49:52,097 - socket_client.config.settings - ERROR - [17/35] 操作失败: 操作执行失败: mouse_move, 坐标: (1345, 615), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:49:52,097 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24321.276秒，使用0.0秒
+2026-04-02 16:49:52,097 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:49:52,097 - socket_client.config.settings - ERROR - [18/36] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:49:52,097 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:49:52,097 - socket_client.config.settings - INFO - 操作回放完成
+2026-04-02 16:49:52,097 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:49:52,097 - socket_client.config.settings - INFO - 总操作数: 36
+2026-04-02 16:49:52,097 - socket_client.config.settings - INFO - 成功数: 10
+2026-04-02 16:49:52,097 - socket_client.config.settings - INFO - 失败数: 8
+2026-04-02 16:49:52,097 - socket_client.config.settings - INFO - 成功率: 27.78%
+2026-04-02 16:49:52,097 - socket_client.config.settings - INFO - 总耗时: 2.559秒
+2026-04-02 16:49:52,097 - socket_client.config.settings - INFO - 平均每条操作: 0.071秒
+2026-04-02 16:49:52,097 - socket_client.config.settings - WARNING - ============================================================
+2026-04-02 16:49:52,097 - socket_client.config.settings - WARNING - 失败的操作详情:
+2026-04-02 16:49:52,097 - socket_client.config.settings - WARNING - ============================================================
+2026-04-02 16:49:52,097 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:49:52,097 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:49:52,097 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:49:52,102 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (1223, 614)
+2026-04-02 16:49:52,102 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:49:52,102 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:49:52,102 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (1345, 615)
+2026-04-02 16:49:52,102 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:49:52,102 - socket_client.config.settings - INFO - 操作执行器已停止
+2026-04-02 16:51:17,919 - socket_client.config.settings - INFO - CSV文件解析成功: documents\录制会话_20260402_100410\录制会话_20260402_100410_operation_log.csv，共解析 18 条操作
+2026-04-02 16:51:17,919 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:51:17,919 - socket_client.config.settings - INFO - 操作回放开始
+2026-04-02 16:51:17,919 - socket_client.config.settings - INFO - 操作记录文件: None
+2026-04-02 16:51:17,919 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:51:17,919 - socket_client.config.settings - INFO - 开始加载操作记录: None
+2026-04-02 16:51:17,919 - socket_client.config.settings - INFO - 加载完成，共 18 条操作记录
+2026-04-02 16:51:17,919 - socket_client.config.settings - INFO - 开始执行 18 条操作...
+2026-04-02 16:51:17,919 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24426.849秒，使用0.0秒
+2026-04-02 16:51:18,139 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24423.856秒，使用0.0秒
+2026-04-02 16:51:18,361 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24423.973秒，使用0.0秒
+2026-04-02 16:51:18,466 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:51:18,466 - socket_client.config.settings - ERROR - [3/21] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:51:18,466 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24423.979秒，使用0.0秒
+2026-04-02 16:51:18,686 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24421.714秒，使用0.0秒
+2026-04-02 16:51:18,911 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24421.786秒，使用0.0秒
+2026-04-02 16:51:19,017 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:51:19,017 - socket_client.config.settings - ERROR - [6/24] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:51:19,017 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24416.126秒，使用0.0秒
+2026-04-02 16:51:19,231 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24414.336秒，使用0.0秒
+2026-04-02 16:51:19,444 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24414.382秒，使用0.0秒
+2026-04-02 16:51:19,550 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:51:19,550 - socket_client.config.settings - ERROR - [9/27] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:51:19,550 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24414.200秒，使用0.0秒
+2026-04-02 16:51:19,767 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24413.173秒，使用0.0秒
+2026-04-02 16:51:19,767 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (1223, 614), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:51:19,767 - socket_client.config.settings - ERROR - [11/29] 操作失败: 操作执行失败: mouse_move, 坐标: (1223, 614), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:51:19,767 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24413.027秒，使用0.0秒
+2026-04-02 16:51:19,767 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:51:19,767 - socket_client.config.settings - ERROR - [12/30] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:51:19,767 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24412.810秒，使用0.0秒
+2026-04-02 16:51:19,981 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24411.495秒，使用0.0秒
+2026-04-02 16:51:20,188 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24411.638秒，使用0.0秒
+2026-04-02 16:51:20,292 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:51:20,292 - socket_client.config.settings - ERROR - [15/33] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:51:20,292 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24411.511秒，使用0.0秒
+2026-04-02 16:51:20,510 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24410.640秒，使用0.0秒
+2026-04-02 16:51:20,512 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (1345, 615), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:51:20,512 - socket_client.config.settings - ERROR - [17/35] 操作失败: 操作执行失败: mouse_move, 坐标: (1345, 615), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:51:20,512 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24409.691秒，使用0.0秒
+2026-04-02 16:51:20,512 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:51:20,512 - socket_client.config.settings - ERROR - [18/36] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:51:20,512 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:51:20,512 - socket_client.config.settings - INFO - 操作回放完成
+2026-04-02 16:51:20,512 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:51:20,512 - socket_client.config.settings - INFO - 总操作数: 36
+2026-04-02 16:51:20,512 - socket_client.config.settings - INFO - 成功数: 10
+2026-04-02 16:51:20,512 - socket_client.config.settings - INFO - 失败数: 8
+2026-04-02 16:51:20,512 - socket_client.config.settings - INFO - 成功率: 27.78%
+2026-04-02 16:51:20,512 - socket_client.config.settings - INFO - 总耗时: 2.593秒
+2026-04-02 16:51:20,512 - socket_client.config.settings - INFO - 平均每条操作: 0.072秒
+2026-04-02 16:51:20,512 - socket_client.config.settings - WARNING - ============================================================
+2026-04-02 16:51:20,512 - socket_client.config.settings - WARNING - 失败的操作详情:
+2026-04-02 16:51:20,512 - socket_client.config.settings - WARNING - ============================================================
+2026-04-02 16:51:20,512 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:51:20,512 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:51:20,512 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:51:20,512 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (1223, 614)
+2026-04-02 16:51:20,514 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:51:20,514 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:51:20,514 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (1345, 615)
+2026-04-02 16:51:20,514 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:51:20,514 - socket_client.config.settings - INFO - 操作执行器已停止
+2026-04-02 16:52:06,496 - socket_client.config.settings - INFO - CSV文件解析成功: documents\录制会话_20260402_100410\录制会话_20260402_100410_operation_log.csv，共解析 18 条操作
+2026-04-02 16:52:06,496 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:52:06,496 - socket_client.config.settings - INFO - 操作回放开始
+2026-04-02 16:52:06,496 - socket_client.config.settings - INFO - 操作记录文件: None
+2026-04-02 16:52:06,497 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:52:06,497 - socket_client.config.settings - INFO - 开始加载操作记录: None
+2026-04-02 16:52:06,497 - socket_client.config.settings - INFO - 加载完成，共 18 条操作记录
+2026-04-02 16:52:06,497 - socket_client.config.settings - INFO - 开始执行 18 条操作...
+2026-04-02 16:52:06,497 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24475.427秒，使用0.0秒
+2026-04-02 16:52:06,721 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24472.439秒，使用0.0秒
+2026-04-02 16:52:06,947 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24472.559秒，使用0.0秒
+2026-04-02 16:52:07,059 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:52:07,059 - socket_client.config.settings - ERROR - [3/21] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:52:07,059 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24472.573秒，使用0.0秒
+2026-04-02 16:52:07,271 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24470.300秒，使用0.0秒
+2026-04-02 16:52:07,487 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24470.363秒，使用0.0秒
+2026-04-02 16:52:07,592 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:52:07,592 - socket_client.config.settings - ERROR - [6/24] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:52:07,592 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24464.700秒，使用0.0秒
+2026-04-02 16:52:07,804 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24462.910秒，使用0.0秒
+2026-04-02 16:52:08,022 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24462.960秒，使用0.0秒
+2026-04-02 16:52:08,138 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:52:08,138 - socket_client.config.settings - ERROR - [9/27] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:52:08,138 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24462.788秒，使用0.0秒
+2026-04-02 16:52:08,357 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24461.764秒，使用0.0秒
+2026-04-02 16:52:08,357 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (1223, 614), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:52:08,357 - socket_client.config.settings - ERROR - [11/29] 操作失败: 操作执行失败: mouse_move, 坐标: (1223, 614), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:52:08,357 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24461.617秒，使用0.0秒
+2026-04-02 16:52:08,357 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:52:08,357 - socket_client.config.settings - ERROR - [12/30] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:52:08,357 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24461.400秒，使用0.0秒
+2026-04-02 16:52:08,578 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24460.092秒，使用0.0秒
+2026-04-02 16:52:08,789 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24460.238秒，使用0.0秒
+2026-04-02 16:52:08,896 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:52:08,896 - socket_client.config.settings - ERROR - [15/33] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:52:08,896 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24460.115秒，使用0.0秒
+2026-04-02 16:52:09,113 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24459.243秒，使用0.0秒
+2026-04-02 16:52:09,117 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (1345, 615), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:52:09,118 - socket_client.config.settings - ERROR - [17/35] 操作失败: 操作执行失败: mouse_move, 坐标: (1345, 615), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:52:09,118 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24458.296秒，使用0.0秒
+2026-04-02 16:52:09,118 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:52:09,118 - socket_client.config.settings - ERROR - [18/36] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:52:09,120 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:52:09,120 - socket_client.config.settings - INFO - 操作回放完成
+2026-04-02 16:52:09,128 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:52:09,128 - socket_client.config.settings - INFO - 总操作数: 36
+2026-04-02 16:52:09,128 - socket_client.config.settings - INFO - 成功数: 10
+2026-04-02 16:52:09,130 - socket_client.config.settings - INFO - 失败数: 8
+2026-04-02 16:52:09,130 - socket_client.config.settings - INFO - 成功率: 27.78%
+2026-04-02 16:52:09,130 - socket_client.config.settings - INFO - 总耗时: 2.624秒
+2026-04-02 16:52:09,130 - socket_client.config.settings - INFO - 平均每条操作: 0.073秒
+2026-04-02 16:52:09,130 - socket_client.config.settings - WARNING - ============================================================
+2026-04-02 16:52:09,130 - socket_client.config.settings - WARNING - 失败的操作详情:
+2026-04-02 16:52:09,131 - socket_client.config.settings - WARNING - ============================================================
+2026-04-02 16:52:09,131 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:52:09,131 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:52:09,132 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:52:09,132 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (1223, 614)
+2026-04-02 16:52:09,132 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:52:09,133 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:52:09,133 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (1345, 615)
+2026-04-02 16:52:09,133 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:52:09,134 - socket_client.config.settings - INFO - 操作执行器已停止
+2026-04-02 16:52:30,227 - socket_client.config.settings - INFO - CSV文件解析成功: documents\录制会话_20260402_100410\录制会话_20260402_100410_operation_log.csv，共解析 18 条操作
+2026-04-02 16:52:30,227 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:52:30,227 - socket_client.config.settings - INFO - 操作回放开始
+2026-04-02 16:52:30,227 - socket_client.config.settings - INFO - 操作记录文件: None
+2026-04-02 16:52:30,227 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:52:30,231 - socket_client.config.settings - INFO - 开始加载操作记录: None
+2026-04-02 16:52:30,231 - socket_client.config.settings - INFO - 加载完成，共 18 条操作记录
+2026-04-02 16:52:30,231 - socket_client.config.settings - INFO - 开始执行 18 条操作...
+2026-04-02 16:52:30,231 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24499.161秒，使用0.0秒
+2026-04-02 16:52:30,456 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24496.174秒，使用0.0秒
+2026-04-02 16:52:30,679 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24496.291秒，使用0.0秒
+2026-04-02 16:52:30,789 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:52:30,789 - socket_client.config.settings - ERROR - [3/21] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:52:30,789 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24496.302秒，使用0.0秒
+2026-04-02 16:52:31,008 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24494.036秒，使用0.0秒
+2026-04-02 16:52:31,229 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24494.105秒，使用0.0秒
+2026-04-02 16:52:31,337 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:52:31,338 - socket_client.config.settings - ERROR - [6/24] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:52:31,338 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24488.447秒，使用0.0秒
+2026-04-02 16:52:31,559 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24486.665秒，使用0.0秒
+2026-04-02 16:52:31,772 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24486.710秒，使用0.0秒
+2026-04-02 16:52:31,888 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:52:31,888 - socket_client.config.settings - ERROR - [9/27] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:52:31,888 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24486.538秒，使用0.0秒
+2026-04-02 16:52:32,090 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24485.497秒，使用0.0秒
+2026-04-02 16:52:32,091 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (1223, 614), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:52:32,093 - socket_client.config.settings - ERROR - [11/29] 操作失败: 操作执行失败: mouse_move, 坐标: (1223, 614), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:52:32,093 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24485.353秒，使用0.0秒
+2026-04-02 16:52:32,093 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:52:32,093 - socket_client.config.settings - ERROR - [12/30] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:52:32,093 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24485.136秒，使用0.0秒
+2026-04-02 16:52:32,306 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24483.820秒，使用0.0秒
+2026-04-02 16:52:32,516 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24483.966秒，使用0.0秒
+2026-04-02 16:52:32,632 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:52:32,632 - socket_client.config.settings - ERROR - [15/33] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:52:32,632 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24483.850秒，使用0.0秒
+2026-04-02 16:52:32,847 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24482.976秒，使用0.0秒
+2026-04-02 16:52:32,850 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (1345, 615), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:52:32,850 - socket_client.config.settings - ERROR - [17/35] 操作失败: 操作执行失败: mouse_move, 坐标: (1345, 615), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:52:32,850 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -24482.028秒，使用0.0秒
+2026-04-02 16:52:32,850 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:52:32,850 - socket_client.config.settings - ERROR - [18/36] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:52:32,850 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:52:32,850 - socket_client.config.settings - INFO - 操作回放完成
+2026-04-02 16:52:32,850 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:52:32,853 - socket_client.config.settings - INFO - 总操作数: 36
+2026-04-02 16:52:32,853 - socket_client.config.settings - INFO - 成功数: 10
+2026-04-02 16:52:32,853 - socket_client.config.settings - INFO - 失败数: 8
+2026-04-02 16:52:32,853 - socket_client.config.settings - INFO - 成功率: 27.78%
+2026-04-02 16:52:32,853 - socket_client.config.settings - INFO - 总耗时: 2.623秒
+2026-04-02 16:52:32,854 - socket_client.config.settings - INFO - 平均每条操作: 0.073秒
+2026-04-02 16:52:32,854 - socket_client.config.settings - WARNING - ============================================================
+2026-04-02 16:52:32,854 - socket_client.config.settings - WARNING - 失败的操作详情:
+2026-04-02 16:52:32,854 - socket_client.config.settings - WARNING - ============================================================
+2026-04-02 16:52:32,854 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:52:32,854 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:52:32,855 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:52:32,855 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (1223, 614)
+2026-04-02 16:52:32,855 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:52:32,855 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:52:32,855 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (1345, 615)
+2026-04-02 16:52:32,855 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:52:32,855 - socket_client.config.settings - INFO - 操作执行器已停止
+2026-04-02 16:57:02,415 - socket_client.config.settings - INFO - CSV文件解析成功: documents\录制会话_20260402_100410\录制会话_20260402_105229_operation_log.csv，共解析 31 条操作
+2026-04-02 16:57:02,415 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:57:02,415 - socket_client.config.settings - INFO - 操作回放开始
+2026-04-02 16:57:02,415 - socket_client.config.settings - INFO - 操作记录文件: None
+2026-04-02 16:57:02,415 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:57:02,415 - socket_client.config.settings - INFO - 开始加载操作记录: None
+2026-04-02 16:57:02,415 - socket_client.config.settings - INFO - 加载完成，共 31 条操作记录
+2026-04-02 16:57:02,415 - socket_client.config.settings - INFO - 开始执行 31 条操作...
+2026-04-02 16:57:02,415 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -21872.392秒，使用0.0秒
+2026-04-02 16:57:02,641 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -21871.523秒，使用0.0秒
+2026-04-02 16:57:02,864 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -21871.648秒，使用0.0秒
+2026-04-02 16:57:02,967 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:57:02,968 - socket_client.config.settings - ERROR - [3/34] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:57:02,968 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -21871.618秒，使用0.0秒
+2026-04-02 16:57:03,188 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -21870.727秒，使用0.0秒
+2026-04-02 16:57:03,413 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -21870.842秒，使用0.0秒
+2026-04-02 16:57:03,517 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:57:03,517 - socket_client.config.settings - ERROR - [6/37] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:57:03,517 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -21870.847秒，使用0.0秒
+2026-04-02 16:57:03,718 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -21868.380秒，使用0.0秒
+2026-04-02 16:57:03,937 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -21868.470秒，使用0.0秒
+2026-04-02 16:57:04,051 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:57:04,051 - socket_client.config.settings - ERROR - [9/40] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:57:04,051 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -21864.325秒，使用0.0秒
+2026-04-02 16:57:04,277 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -21857.910秒，使用0.0秒
+2026-04-02 16:57:04,499 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -21858.106秒，使用0.0秒
+2026-04-02 16:57:04,612 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:57:04,612 - socket_client.config.settings - ERROR - [12/43] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:57:04,612 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -21857.847秒，使用0.0秒
+2026-04-02 16:57:04,826 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -21858.060秒，使用0.0秒
+2026-04-02 16:57:05,033 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -21858.080秒，使用0.0秒
+2026-04-02 16:57:05,257 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -21858.040秒，使用0.0秒
+2026-04-02 16:57:05,476 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -21857.993秒，使用0.0秒
+2026-04-02 16:57:05,696 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -21857.476秒，使用0.0秒
+2026-04-02 16:57:05,905 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -21856.947秒，使用0.0秒
+2026-04-02 16:57:06,112 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -21857.155秒，使用0.0秒
+2026-04-02 16:57:06,327 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -21857.272秒，使用0.0秒
+2026-04-02 16:57:06,532 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -21857.133秒，使用0.0秒
+2026-04-02 16:57:06,743 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -21857.142秒，使用0.0秒
+2026-04-02 16:57:06,966 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -21857.163秒，使用0.0秒
+2026-04-02 16:57:07,175 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -21857.311秒，使用0.0秒
+2026-04-02 16:57:07,377 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -21857.521秒，使用0.0秒
+2026-04-02 16:57:07,588 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -21854.626秒，使用0.0秒
+2026-04-02 16:57:07,800 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -21854.728秒，使用0.0秒
+2026-04-02 16:57:07,916 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:57:07,917 - socket_client.config.settings - ERROR - [28/59] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 16:57:07,917 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -21854.328秒，使用0.0秒
+2026-04-02 16:57:08,124 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -21853.159秒，使用0.0秒
+2026-04-02 16:57:08,124 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (1021, 589), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:57:08,124 - socket_client.config.settings - ERROR - [30/61] 操作失败: 操作执行失败: mouse_move, 坐标: (1021, 589), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:57:08,124 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -21852.305秒，使用0.0秒
+2026-04-02 16:57:08,124 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:57:08,124 - socket_client.config.settings - ERROR - [31/62] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 16:57:08,124 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:57:08,124 - socket_client.config.settings - INFO - 操作回放完成
+2026-04-02 16:57:08,124 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 16:57:08,124 - socket_client.config.settings - INFO - 总操作数: 62
+2026-04-02 16:57:08,129 - socket_client.config.settings - INFO - 成功数: 24
+2026-04-02 16:57:08,129 - socket_client.config.settings - INFO - 失败数: 7
+2026-04-02 16:57:08,129 - socket_client.config.settings - INFO - 成功率: 38.71%
+2026-04-02 16:57:08,129 - socket_client.config.settings - INFO - 总耗时: 5.709秒
+2026-04-02 16:57:08,129 - socket_client.config.settings - INFO - 平均每条操作: 0.092秒
+2026-04-02 16:57:08,129 - socket_client.config.settings - WARNING - ============================================================
+2026-04-02 16:57:08,129 - socket_client.config.settings - WARNING - 失败的操作详情:
+2026-04-02 16:57:08,129 - socket_client.config.settings - WARNING - ============================================================
+2026-04-02 16:57:08,129 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:57:08,129 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:57:08,131 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:57:08,131 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:57:08,131 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:57:08,131 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (1021, 589)
+2026-04-02 16:57:08,131 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 16:57:08,131 - socket_client.config.settings - INFO - 操作执行器已停止
+2026-04-02 17:03:34,160 - socket_client.config.settings - INFO - CSV文件解析成功: documents\录制会话_20260402_100410\录制会话_20260402_165939_operation_log.csv，共解析 21 条操作
+2026-04-02 17:03:34,160 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:03:34,160 - socket_client.config.settings - INFO - 操作回放开始
+2026-04-02 17:03:34,160 - socket_client.config.settings - INFO - 操作记录文件: None
+2026-04-02 17:03:34,160 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:03:34,161 - socket_client.config.settings - INFO - 开始加载操作记录: None
+2026-04-02 17:03:34,161 - socket_client.config.settings - INFO - 加载完成，共 21 条操作记录
+2026-04-02 17:03:34,161 - socket_client.config.settings - INFO - 开始执行 21 条操作...
+2026-04-02 17:03:34,161 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -233.321秒，使用0.0秒
+2026-04-02 17:03:34,380 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -230.636秒，使用0.0秒
+2026-04-02 17:03:34,602 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -230.663秒，使用0.0秒
+2026-04-02 17:03:34,706 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 17:03:34,706 - socket_client.config.settings - ERROR - [3/24] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 17:03:34,707 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -230.667秒，使用0.0秒
+2026-04-02 17:03:34,921 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -226.128秒，使用0.0秒
+2026-04-02 17:03:35,129 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -226.122秒，使用0.0秒
+2026-04-02 17:03:35,242 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 17:03:35,243 - socket_client.config.settings - ERROR - [6/27] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 17:03:35,244 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -212.796秒，使用0.0秒
+2026-04-02 17:03:35,470 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -210.798秒，使用0.0秒
+2026-04-02 17:03:35,685 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -209.995秒，使用0.0秒
+2026-04-02 17:03:35,903 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -209.125秒，使用0.0秒
+2026-04-02 17:03:36,128 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -208.383秒，使用0.0秒
+2026-04-02 17:03:36,343 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -207.692秒，使用0.0秒
+2026-04-02 17:03:36,557 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -206.420秒，使用0.0秒
+2026-04-02 17:03:36,765 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -206.527秒，使用0.0秒
+2026-04-02 17:03:36,987 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -206.228秒，使用0.0秒
+2026-04-02 17:03:37,218 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -206.138秒，使用0.0秒
+2026-04-02 17:03:37,427 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -204.728秒，使用0.0秒
+2026-04-02 17:03:37,653 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -203.709秒，使用0.0秒
+2026-04-02 17:03:37,761 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 17:03:37,761 - socket_client.config.settings - ERROR - [18/39] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 17:03:37,761 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -203.193秒，使用0.0秒
+2026-04-02 17:03:37,983 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -201.727秒，使用0.0秒
+2026-04-02 17:03:37,983 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (799, 541), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:03:37,983 - socket_client.config.settings - ERROR - [20/41] 操作失败: 操作执行失败: mouse_move, 坐标: (799, 541), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:03:37,983 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -200.887秒，使用0.0秒
+2026-04-02 17:03:37,983 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:03:37,983 - socket_client.config.settings - ERROR - [21/42] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:03:37,983 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:03:37,983 - socket_client.config.settings - INFO - 操作回放完成
+2026-04-02 17:03:37,983 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:03:37,988 - socket_client.config.settings - INFO - 总操作数: 42
+2026-04-02 17:03:37,988 - socket_client.config.settings - INFO - 成功数: 16
+2026-04-02 17:03:37,988 - socket_client.config.settings - INFO - 失败数: 5
+2026-04-02 17:03:37,988 - socket_client.config.settings - INFO - 成功率: 38.10%
+2026-04-02 17:03:37,990 - socket_client.config.settings - INFO - 总耗时: 3.823秒
+2026-04-02 17:03:37,990 - socket_client.config.settings - INFO - 平均每条操作: 0.091秒
+2026-04-02 17:03:37,990 - socket_client.config.settings - WARNING - ============================================================
+2026-04-02 17:03:37,990 - socket_client.config.settings - WARNING - 失败的操作详情:
+2026-04-02 17:03:37,990 - socket_client.config.settings - WARNING - ============================================================
+2026-04-02 17:03:37,990 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 17:03:37,990 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 17:03:37,990 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 17:03:37,992 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (799, 541)
+2026-04-02 17:03:37,992 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 17:03:37,992 - socket_client.config.settings - INFO - 操作执行器已停止
+2026-04-02 17:03:54,247 - socket_client.config.settings - INFO - CSV文件解析成功: documents\录制会话_20260402_100410\录制会话_20260402_165939_operation_log.csv，共解析 21 条操作
+2026-04-02 17:03:54,247 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:03:54,247 - socket_client.config.settings - INFO - 操作回放开始
+2026-04-02 17:03:54,247 - socket_client.config.settings - INFO - 操作记录文件: None
+2026-04-02 17:03:54,247 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:03:54,247 - socket_client.config.settings - INFO - 开始加载操作记录: None
+2026-04-02 17:03:54,247 - socket_client.config.settings - INFO - 加载完成，共 21 条操作记录
+2026-04-02 17:03:54,247 - socket_client.config.settings - INFO - 开始执行 21 条操作...
+2026-04-02 17:03:54,247 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -253.407秒，使用0.0秒
+2026-04-02 17:03:54,461 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -250.717秒，使用0.0秒
+2026-04-02 17:03:54,682 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -250.744秒，使用0.0秒
+2026-04-02 17:03:54,789 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 17:03:54,791 - socket_client.config.settings - ERROR - [3/24] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 17:03:54,791 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -250.751秒，使用0.0秒
+2026-04-02 17:03:54,998 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -246.205秒，使用0.0秒
+2026-04-02 17:03:55,212 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -246.204秒，使用0.0秒
+2026-04-02 17:03:55,328 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 17:03:55,328 - socket_client.config.settings - ERROR - [6/27] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 17:03:55,328 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -232.880秒，使用0.0秒
+2026-04-02 17:03:55,536 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -230.864秒，使用0.0秒
+2026-04-02 17:03:55,758 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -230.068秒，使用0.0秒
+2026-04-02 17:03:55,983 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -229.204秒，使用0.0秒
+2026-04-02 17:03:56,207 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -228.462秒，使用0.0秒
+2026-04-02 17:03:56,420 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -227.769秒，使用0.0秒
+2026-04-02 17:03:56,645 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -226.508秒，使用0.0秒
+2026-04-02 17:03:56,855 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -226.617秒，使用0.0秒
+2026-04-02 17:03:57,066 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -226.307秒，使用0.0秒
+2026-04-02 17:03:57,284 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -226.204秒，使用0.0秒
+2026-04-02 17:03:57,501 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -224.802秒，使用0.0秒
+2026-04-02 17:03:57,724 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -223.780秒，使用0.0秒
+2026-04-02 17:03:57,829 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 17:03:57,830 - socket_client.config.settings - ERROR - [18/39] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 17:03:57,830 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -223.262秒，使用0.0秒
+2026-04-02 17:03:58,048 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -221.792秒，使用0.0秒
+2026-04-02 17:03:58,048 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (799, 541), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:03:58,048 - socket_client.config.settings - ERROR - [20/41] 操作失败: 操作执行失败: mouse_move, 坐标: (799, 541), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:03:58,048 - socket_client.config.settings - WARNING - 计算出的延迟时间小于0秒: -220.952秒，使用0.0秒
+2026-04-02 17:03:58,048 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:03:58,054 - socket_client.config.settings - ERROR - [21/42] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:03:58,054 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:03:58,054 - socket_client.config.settings - INFO - 操作回放完成
+2026-04-02 17:03:58,054 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:03:58,054 - socket_client.config.settings - INFO - 总操作数: 42
+2026-04-02 17:03:58,054 - socket_client.config.settings - INFO - 成功数: 16
+2026-04-02 17:03:58,054 - socket_client.config.settings - INFO - 失败数: 5
+2026-04-02 17:03:58,054 - socket_client.config.settings - INFO - 成功率: 38.10%
+2026-04-02 17:03:58,054 - socket_client.config.settings - INFO - 总耗时: 3.806秒
+2026-04-02 17:03:58,055 - socket_client.config.settings - INFO - 平均每条操作: 0.091秒
+2026-04-02 17:03:58,055 - socket_client.config.settings - WARNING - ============================================================
+2026-04-02 17:03:58,056 - socket_client.config.settings - WARNING - 失败的操作详情:
+2026-04-02 17:03:58,056 - socket_client.config.settings - WARNING - ============================================================
+2026-04-02 17:03:58,056 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 17:03:58,056 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 17:03:58,056 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 17:03:58,056 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (799, 541)
+2026-04-02 17:03:58,056 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 17:03:58,057 - socket_client.config.settings - INFO - 操作执行器已停止
+2026-04-02 17:13:27,506 - socket_client.config.settings - INFO - CSV文件解析成功: documents\录制会话_20260402_100410\录制会话_20260402_165939_operation_log.csv，共解析 21 条操作
+2026-04-02 17:13:27,506 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:13:27,506 - socket_client.config.settings - INFO - 操作回放开始
+2026-04-02 17:13:27,506 - socket_client.config.settings - INFO - 操作记录文件: None
+2026-04-02 17:13:27,506 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:13:27,506 - socket_client.config.settings - INFO - 开始加载操作记录: None
+2026-04-02 17:13:27,506 - socket_client.config.settings - INFO - 加载完成，共 21 条操作记录
+2026-04-02 17:13:27,506 - socket_client.config.settings - INFO - 开始执行 21 条操作...
+2026-04-02 17:13:31,171 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 17:13:31,171 - socket_client.config.settings - ERROR - [3/24] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 17:13:36,833 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 17:13:36,833 - socket_client.config.settings - ERROR - [6/27] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 17:14:04,229 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 17:14:04,230 - socket_client.config.settings - ERROR - [18/39] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 17:14:06,754 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (799, 541), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:14:06,754 - socket_client.config.settings - ERROR - [20/41] 操作失败: 操作执行失败: mouse_move, 坐标: (799, 541), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:14:07,567 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:14:07,567 - socket_client.config.settings - ERROR - [21/42] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:14:07,567 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:14:07,567 - socket_client.config.settings - INFO - 操作回放完成
+2026-04-02 17:14:07,567 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:14:07,567 - socket_client.config.settings - INFO - 总操作数: 42
+2026-04-02 17:14:07,567 - socket_client.config.settings - INFO - 成功数: 16
+2026-04-02 17:14:07,567 - socket_client.config.settings - INFO - 失败数: 5
+2026-04-02 17:14:07,567 - socket_client.config.settings - INFO - 成功率: 38.10%
+2026-04-02 17:14:07,567 - socket_client.config.settings - INFO - 总耗时: 40.060秒
+2026-04-02 17:14:07,567 - socket_client.config.settings - INFO - 平均每条操作: 0.954秒
+2026-04-02 17:14:07,567 - socket_client.config.settings - WARNING - ============================================================
+2026-04-02 17:14:07,567 - socket_client.config.settings - WARNING - 失败的操作详情:
+2026-04-02 17:14:07,567 - socket_client.config.settings - WARNING - ============================================================
+2026-04-02 17:14:07,567 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 17:14:07,567 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 17:14:07,567 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 17:14:07,567 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (799, 541)
+2026-04-02 17:14:07,567 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 17:14:07,567 - socket_client.config.settings - INFO - 操作执行器已停止
+2026-04-02 17:20:00,066 - socket_client.config.settings - INFO - CSV文件解析成功: documents\录制会话_20260402_100410\录制会话_20260402_165939_operation_log.csv，共解析 21 条操作
+2026-04-02 17:20:00,067 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:20:00,067 - socket_client.config.settings - INFO - 操作回放开始
+2026-04-02 17:20:00,067 - socket_client.config.settings - INFO - 操作记录文件: None
+2026-04-02 17:20:00,067 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:20:00,067 - socket_client.config.settings - INFO - 开始加载操作记录: None
+2026-04-02 17:20:00,067 - socket_client.config.settings - INFO - 加载完成，共 21 条操作记录
+2026-04-02 17:20:00,067 - socket_client.config.settings - INFO - 开始执行 21 条操作...
+2026-04-02 17:20:03,707 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 17:20:03,707 - socket_client.config.settings - ERROR - [3/24] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 17:20:09,361 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 17:20:09,362 - socket_client.config.settings - ERROR - [6/27] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 17:20:32,886 - socket_client.config.settings - ERROR - 操作执行失败: key_press, 坐标: (None, None), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 0 - 操作成功完成。
+2026-04-02 17:20:32,886 - socket_client.config.settings - ERROR - [15/36] 操作失败: 操作执行失败: key_press, 坐标: (None, None), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 0 - 操作成功完成。
+2026-04-02 17:20:33,199 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (465, 261), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 0 - 操作成功完成。
+2026-04-02 17:20:33,199 - socket_client.config.settings - ERROR - [16/37] 操作失败: 操作执行失败: mouse_move, 坐标: (465, 261), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 0 - 操作成功完成。
+2026-04-02 17:20:34,810 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (419, 149), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 0 - 操作成功完成。
+2026-04-02 17:20:34,810 - socket_client.config.settings - ERROR - [17/38] 操作失败: 操作执行失败: mouse_move, 坐标: (419, 149), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 0 - 操作成功完成。
+2026-04-02 17:20:36,011 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 0 - 操作成功完成。
+2026-04-02 17:20:36,011 - socket_client.config.settings - ERROR - [18/39] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 0 - 操作成功完成。
+2026-04-02 17:20:36,480 - socket_client.config.settings - INFO - 操作执行器已停止
+2026-04-02 17:20:36,486 - socket_client.config.settings - INFO - 用户中断了回放
+2026-04-02 17:21:13,623 - socket_client.config.settings - INFO - CSV文件解析成功: documents\录制会话_20260402_100410\录制会话_20260402_165939_operation_log.csv，共解析 21 条操作
+2026-04-02 17:21:13,623 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:21:13,623 - socket_client.config.settings - INFO - 操作回放开始
+2026-04-02 17:21:13,623 - socket_client.config.settings - INFO - 操作记录文件: None
+2026-04-02 17:21:13,623 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:21:13,623 - socket_client.config.settings - INFO - 开始加载操作记录: None
+2026-04-02 17:21:13,627 - socket_client.config.settings - INFO - 加载完成，共 21 条操作记录
+2026-04-02 17:21:13,627 - socket_client.config.settings - INFO - 开始执行 21 条操作...
+2026-04-02 17:21:17,301 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 17:21:17,301 - socket_client.config.settings - ERROR - [3/24] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 17:21:22,968 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 17:21:22,968 - socket_client.config.settings - ERROR - [6/27] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 17:21:36,381 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (315, 144), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 0 - 操作成功完成。
+2026-04-02 17:21:36,382 - socket_client.config.settings - ERROR - [7/28] 操作失败: 操作执行失败: mouse_move, 坐标: (315, 144), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 0 - 操作成功完成。
+2026-04-02 17:21:38,588 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (465, 261), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 0 - 操作成功完成。
+2026-04-02 17:21:38,588 - socket_client.config.settings - ERROR - [8/29] 操作失败: 操作执行失败: mouse_move, 坐标: (465, 261), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 0 - 操作成功完成。
+2026-04-02 17:21:39,593 - socket_client.config.settings - ERROR - 操作执行失败: key_press, 坐标: (None, None), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 0 - 操作成功完成。
+2026-04-02 17:21:39,593 - socket_client.config.settings - ERROR - [9/30] 操作失败: 操作执行失败: key_press, 坐标: (None, None), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 0 - 操作成功完成。
+2026-04-02 17:21:40,700 - socket_client.config.settings - ERROR - 操作执行失败: key_press, 坐标: (None, None), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 0 - 操作成功完成。
+2026-04-02 17:21:40,700 - socket_client.config.settings - ERROR - [10/31] 操作失败: 操作执行失败: key_press, 坐标: (None, None), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 0 - 操作成功完成。
+2026-04-02 17:21:40,897 - socket_client.config.settings - INFO - 操作执行器已停止
+2026-04-02 17:21:40,897 - socket_client.config.settings - INFO - 用户中断了回放
+2026-04-02 17:22:54,797 - socket_client.config.settings - ERROR - 发生未预期的错误: CSVParseError: JSON和CSV解析均失败。JSON错误: CSVParseError: JSON解析过程发生错误: 'utf-8' codec can't decode byte 0x87 in position 10: invalid start byte, CSV错误: CSVParseError: CSV解析过程发生错误: 'utf-8' codec can't decode byte 0x87 in position 10: invalid start byte
+Traceback (most recent call last):
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\parsers\csv_parser.py", line 90, in parse_json
+    data = json.load(f)
+  File "C:\Users\52367\AppData\Local\Programs\Python\Python310\lib\json\__init__.py", line 293, in load
+    return loads(fp.read(),
+  File "C:\Users\52367\AppData\Local\Programs\Python\Python310\lib\codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+  File "C:\Users\52367\AppData\Local\Programs\Python\Python310\lib\encodings\utf_8_sig.py", line 69, in _buffer_decode
+    return codecs.utf_8_decode(input, errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x87 in position 10: invalid start byte
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\parsers\csv_parser.py", line 244, in parse_operation_log
+    return parser.parse_json()
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\parsers\csv_parser.py", line 125, in parse_json
+    raise CSVParseError(f"JSON解析过程发生错误: {e}")
+socket_client.utils.exceptions.CSVParseError: CSVParseError: JSON解析过程发生错误: 'utf-8' codec can't decode byte 0x87 in position 10: invalid start byte
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\parsers\csv_parser.py", line 63, in parse
+    for row in reader:
+  File "C:\Users\52367\AppData\Local\Programs\Python\Python310\lib\csv.py", line 110, in __next__
+    self.fieldnames
+  File "C:\Users\52367\AppData\Local\Programs\Python\Python310\lib\csv.py", line 97, in fieldnames
+    self._fieldnames = next(self.reader)
+  File "C:\Users\52367\AppData\Local\Programs\Python\Python310\lib\codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+  File "C:\Users\52367\AppData\Local\Programs\Python\Python310\lib\encodings\utf_8_sig.py", line 69, in _buffer_decode
+    return codecs.utf_8_decode(input, errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x87 in position 10: invalid start byte
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\parsers\csv_parser.py", line 248, in parse_operation_log
+    return parser.parse()
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\parsers\csv_parser.py", line 75, in parse
+    raise CSVParseError(f"CSV解析过程发生错误: {e}")
+socket_client.utils.exceptions.CSVParseError: CSVParseError: CSV解析过程发生错误: 'utf-8' codec can't decode byte 0x87 in position 10: invalid start byte
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\main.py", line 158, in main
+    result = execute_csv_replay(
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\executor\replay_engine.py", line 237, in execute_csv_replay
+    engine = OperationReplayEngine(csv_path)
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\executor\replay_engine.py", line 40, in __init__
+    self.parser = parse_operation_log(csv_path)
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\parsers\csv_parser.py", line 250, in parse_operation_log
+    raise CSVParseError(
+socket_client.utils.exceptions.CSVParseError: CSVParseError: JSON和CSV解析均失败。JSON错误: CSVParseError: JSON解析过程发生错误: 'utf-8' codec can't decode byte 0x87 in position 10: invalid start byte, CSV错误: CSVParseError: CSV解析过程发生错误: 'utf-8' codec can't decode byte 0x87 in position 10: invalid start byte
+2026-04-02 17:23:03,530 - socket_client.config.settings - ERROR - 发生未预期的错误: CSVParseError: JSON和CSV解析均失败。JSON错误: CSVParseError: JSON解析过程发生错误: 'utf-8' codec can't decode byte 0x87 in position 10: invalid start byte, CSV错误: CSVParseError: CSV解析过程发生错误: 'utf-8' codec can't decode byte 0x87 in position 10: invalid start byte
+Traceback (most recent call last):
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\parsers\csv_parser.py", line 90, in parse_json
+    data = json.load(f)
+  File "C:\Users\52367\AppData\Local\Programs\Python\Python310\lib\json\__init__.py", line 293, in load
+    return loads(fp.read(),
+  File "C:\Users\52367\AppData\Local\Programs\Python\Python310\lib\codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+  File "C:\Users\52367\AppData\Local\Programs\Python\Python310\lib\encodings\utf_8_sig.py", line 69, in _buffer_decode
+    return codecs.utf_8_decode(input, errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x87 in position 10: invalid start byte
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\parsers\csv_parser.py", line 244, in parse_operation_log
+    return parser.parse_json()
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\parsers\csv_parser.py", line 125, in parse_json
+    raise CSVParseError(f"JSON解析过程发生错误: {e}")
+socket_client.utils.exceptions.CSVParseError: CSVParseError: JSON解析过程发生错误: 'utf-8' codec can't decode byte 0x87 in position 10: invalid start byte
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\parsers\csv_parser.py", line 63, in parse
+    for row in reader:
+  File "C:\Users\52367\AppData\Local\Programs\Python\Python310\lib\csv.py", line 110, in __next__
+    self.fieldnames
+  File "C:\Users\52367\AppData\Local\Programs\Python\Python310\lib\csv.py", line 97, in fieldnames
+    self._fieldnames = next(self.reader)
+  File "C:\Users\52367\AppData\Local\Programs\Python\Python310\lib\codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+  File "C:\Users\52367\AppData\Local\Programs\Python\Python310\lib\encodings\utf_8_sig.py", line 69, in _buffer_decode
+    return codecs.utf_8_decode(input, errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x87 in position 10: invalid start byte
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\parsers\csv_parser.py", line 248, in parse_operation_log
+    return parser.parse()
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\parsers\csv_parser.py", line 75, in parse
+    raise CSVParseError(f"CSV解析过程发生错误: {e}")
+socket_client.utils.exceptions.CSVParseError: CSVParseError: CSV解析过程发生错误: 'utf-8' codec can't decode byte 0x87 in position 10: invalid start byte
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\main.py", line 158, in main
+    result = execute_csv_replay(
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\executor\replay_engine.py", line 237, in execute_csv_replay
+    engine = OperationReplayEngine(csv_path)
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\executor\replay_engine.py", line 40, in __init__
+    self.parser = parse_operation_log(csv_path)
+  File "C:\WorkSpace\auto-playblack-v3\socket_client\parsers\csv_parser.py", line 250, in parse_operation_log
+    raise CSVParseError(
+socket_client.utils.exceptions.CSVParseError: CSVParseError: JSON和CSV解析均失败。JSON错误: CSVParseError: JSON解析过程发生错误: 'utf-8' codec can't decode byte 0x87 in position 10: invalid start byte, CSV错误: CSVParseError: CSV解析过程发生错误: 'utf-8' codec can't decode byte 0x87 in position 10: invalid start byte
+2026-04-02 17:25:10,411 - socket_client.config.settings - INFO - CSV文件解析成功: documents\录制会话_20260402_100410\录制会话_20260402_172313_operation_log.csv，共解析 26 条操作
+2026-04-02 17:25:10,411 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:25:10,411 - socket_client.config.settings - INFO - 操作回放开始
+2026-04-02 17:25:10,411 - socket_client.config.settings - INFO - 操作记录文件: None
+2026-04-02 17:25:10,411 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:25:10,411 - socket_client.config.settings - INFO - 开始加载操作记录: None
+2026-04-02 17:25:10,411 - socket_client.config.settings - INFO - 加载完成，共 26 条操作记录
+2026-04-02 17:25:10,411 - socket_client.config.settings - INFO - 开始执行 26 条操作...
+2026-04-02 17:25:15,872 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 17:25:15,874 - socket_client.config.settings - ERROR - [3/29] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 17:25:19,848 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 17:25:19,848 - socket_client.config.settings - ERROR - [6/32] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 17:25:29,132 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 17:25:29,132 - socket_client.config.settings - ERROR - [9/35] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: OperationExecuteError: 鼠标点击缺少坐标信息
+2026-04-02 17:25:32,377 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:25:32,377 - socket_client.config.settings - ERROR - [12/38] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:25:36,786 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (328, 150), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:25:36,786 - socket_client.config.settings - ERROR - [13/39] 操作失败: 操作执行失败: mouse_move, 坐标: (328, 150), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:25:41,094 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (416, 146), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:25:41,094 - socket_client.config.settings - ERROR - [14/40] 操作失败: 操作执行失败: mouse_move, 坐标: (416, 146), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:25:41,402 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:25:41,402 - socket_client.config.settings - ERROR - [15/41] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:25:42,013 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (429, 160), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:25:42,013 - socket_client.config.settings - ERROR - [16/42] 操作失败: 操作执行失败: mouse_move, 坐标: (429, 160), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:25:42,014 - socket_client.config.settings - WARNING - 时间戳递减：当前 1775121823.115，上一次 1775121823.380，延迟 -0.265 秒，取值为0
+2026-04-02 17:25:42,015 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (416, 146), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:25:42,015 - socket_client.config.settings - ERROR - [17/43] 操作失败: 操作执行失败: mouse_move, 坐标: (416, 146), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:25:44,619 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:25:44,619 - socket_client.config.settings - ERROR - [18/44] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:25:45,028 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (679, 531), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:25:45,028 - socket_client.config.settings - ERROR - [19/45] 操作失败: 操作执行失败: mouse_move, 坐标: (679, 531), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:25:48,541 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (410, 141), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:25:48,541 - socket_client.config.settings - ERROR - [20/46] 操作失败: 操作执行失败: mouse_move, 坐标: (410, 141), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:25:48,951 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:25:48,951 - socket_client.config.settings - ERROR - [21/47] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:25:49,462 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (410, 141), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:25:49,462 - socket_client.config.settings - ERROR - [22/48] 操作失败: 操作执行失败: mouse_move, 坐标: (410, 141), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:25:50,865 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (819, 547), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:25:50,865 - socket_client.config.settings - ERROR - [23/49] 操作失败: 操作执行失败: mouse_move, 坐标: (819, 547), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:25:51,177 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:25:51,177 - socket_client.config.settings - ERROR - [24/50] 操作失败: 操作执行失败: mouse_click, 坐标: (None, None), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:25:54,292 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (819, 547), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:25:54,292 - socket_client.config.settings - ERROR - [25/51] 操作失败: 操作执行失败: mouse_move, 坐标: (819, 547), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:25:55,996 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (819, 542), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:25:55,996 - socket_client.config.settings - ERROR - [26/52] 操作失败: 操作执行失败: mouse_move, 坐标: (819, 542), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:25:55,996 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:25:55,996 - socket_client.config.settings - INFO - 操作回放完成
+2026-04-02 17:25:55,996 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:25:55,996 - socket_client.config.settings - INFO - 总操作数: 52
+2026-04-02 17:25:55,996 - socket_client.config.settings - INFO - 成功数: 8
+2026-04-02 17:25:55,996 - socket_client.config.settings - INFO - 失败数: 18
+2026-04-02 17:25:55,996 - socket_client.config.settings - INFO - 成功率: 15.38%
+2026-04-02 17:25:55,996 - socket_client.config.settings - INFO - 总耗时: 45.585秒
+2026-04-02 17:25:55,999 - socket_client.config.settings - INFO - 平均每条操作: 0.877秒
+2026-04-02 17:25:55,999 - socket_client.config.settings - WARNING - ============================================================
+2026-04-02 17:25:55,999 - socket_client.config.settings - WARNING - 失败的操作详情:
+2026-04-02 17:25:55,999 - socket_client.config.settings - WARNING - ============================================================
+2026-04-02 17:25:55,999 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 17:25:55,999 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 17:25:55,999 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 17:25:55,999 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 17:25:55,999 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (328, 150)
+2026-04-02 17:25:55,999 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (416, 146)
+2026-04-02 17:25:55,999 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 17:25:56,000 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (429, 160)
+2026-04-02 17:25:56,000 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (416, 146)
+2026-04-02 17:25:56,000 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 17:25:56,000 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (679, 531)
+2026-04-02 17:25:56,000 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (410, 141)
+2026-04-02 17:25:56,000 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 17:25:56,000 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (410, 141)
+2026-04-02 17:25:56,000 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (819, 547)
+2026-04-02 17:25:56,000 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (None, None)
+2026-04-02 17:25:56,000 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (819, 547)
+2026-04-02 17:25:56,000 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (819, 542)
+2026-04-02 17:25:56,002 - socket_client.config.settings - INFO - 操作执行器已停止
+2026-04-02 17:27:25,939 - socket_client.config.settings - INFO - CSV文件解析成功: documents\录制会话_20260402_100410\录制会话_20260402_172313_operation_log.csv，共解析 26 条操作
+2026-04-02 17:27:25,939 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:27:25,939 - socket_client.config.settings - INFO - 操作回放开始
+2026-04-02 17:27:25,939 - socket_client.config.settings - INFO - 操作记录文件: None
+2026-04-02 17:27:25,939 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:27:25,939 - socket_client.config.settings - INFO - 开始加载操作记录: None
+2026-04-02 17:27:25,939 - socket_client.config.settings - INFO - 加载完成，共 26 条操作记录
+2026-04-02 17:27:25,939 - socket_client.config.settings - INFO - 开始执行 26 条操作...
+2026-04-02 17:27:25,945 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (810, 554), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:27:25,945 - socket_client.config.settings - ERROR - [1/27] 操作失败: 操作执行失败: mouse_move, 坐标: (810, 554), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:27:30,458 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (1020, 145), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:27:30,458 - socket_client.config.settings - ERROR - [2/28] 操作失败: 操作执行失败: mouse_move, 坐标: (1020, 145), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:27:30,863 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (1020, 145), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:27:30,863 - socket_client.config.settings - ERROR - [3/29] 操作失败: 操作执行失败: mouse_click, 坐标: (1020, 145), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:27:32,371 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (1020, 145), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:27:32,371 - socket_client.config.settings - ERROR - [4/30] 操作失败: 操作执行失败: mouse_move, 坐标: (1020, 145), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:27:34,177 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (282, 146), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:27:34,177 - socket_client.config.settings - ERROR - [5/31] 操作失败: 操作执行失败: mouse_move, 坐标: (282, 146), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:27:34,288 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (282, 146), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:27:34,288 - socket_client.config.settings - ERROR - [6/32] 操作失败: 操作执行失败: mouse_click, 坐标: (282, 146), 错误: WindowNotFoundError: 激活窗口失败: Advanced Computer Operation Recorder, 错误: WindowNotFoundError: 窗口不存在: Advanced Computer Operation Recorder
+2026-04-02 17:27:40,258 - socket_client.config.settings - INFO - 操作执行器已停止
+2026-04-02 17:27:40,258 - socket_client.config.settings - INFO - 用户中断了回放
+2026-04-02 17:29:16,132 - socket_client.config.settings - INFO - CSV文件解析成功: documents\录制会话_20260402_100410\录制会话_20260402_172756_operation_log.csv，共解析 25 条操作
+2026-04-02 17:29:16,132 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:29:16,132 - socket_client.config.settings - INFO - 操作回放开始
+2026-04-02 17:29:16,132 - socket_client.config.settings - INFO - 操作记录文件: None
+2026-04-02 17:29:16,133 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:29:16,133 - socket_client.config.settings - INFO - 开始加载操作记录: None
+2026-04-02 17:29:16,133 - socket_client.config.settings - INFO - 加载完成，共 25 条操作记录
+2026-04-02 17:29:16,133 - socket_client.config.settings - INFO - 开始执行 25 条操作...
+2026-04-02 17:29:16,289 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (809, 641), 错误: [Errno 2] No such file or directory: '809'
+2026-04-02 17:29:16,289 - socket_client.config.settings - ERROR - [1/26] 操作失败: 操作执行失败: mouse_move, 坐标: (809, 641), 错误: [Errno 2] No such file or directory: '809'
+2026-04-02 17:29:17,752 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (1193, 348), 错误: [Errno 2] No such file or directory: '1193'
+2026-04-02 17:29:17,752 - socket_client.config.settings - ERROR - [2/27] 操作失败: 操作执行失败: mouse_move, 坐标: (1193, 348), 错误: [Errno 2] No such file or directory: '1193'
+2026-04-02 17:29:19,412 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (1193, 348), 错误: [Errno 2] No such file or directory: '1193'
+2026-04-02 17:29:19,412 - socket_client.config.settings - ERROR - [3/28] 操作失败: 操作执行失败: mouse_click, 坐标: (1193, 348), 错误: [Errno 2] No such file or directory: '1193'
+2026-04-02 17:29:21,560 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (1193, 348), 错误: [Errno 2] No such file or directory: '1193'
+2026-04-02 17:29:21,560 - socket_client.config.settings - ERROR - [4/29] 操作失败: 操作执行失败: mouse_move, 坐标: (1193, 348), 错误: [Errno 2] No such file or directory: '1193'
+2026-04-02 17:29:23,013 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (409, 291), 错误: [Errno 2] No such file or directory: '409'
+2026-04-02 17:29:23,013 - socket_client.config.settings - ERROR - [5/30] 操作失败: 操作执行失败: mouse_move, 坐标: (409, 291), 错误: [Errno 2] No such file or directory: '409'
+2026-04-02 17:29:23,278 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (409, 291), 错误: [Errno 2] No such file or directory: '409'
+2026-04-02 17:29:23,278 - socket_client.config.settings - ERROR - [6/31] 操作失败: 操作执行失败: mouse_click, 坐标: (409, 291), 错误: [Errno 2] No such file or directory: '409'
+2026-04-02 17:29:28,128 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (424, 290), 错误: [Errno 2] No such file or directory: '424'
+2026-04-02 17:29:28,129 - socket_client.config.settings - ERROR - [7/32] 操作失败: 操作执行失败: mouse_move, 坐标: (424, 290), 错误: [Errno 2] No such file or directory: '424'
+2026-04-02 17:29:30,093 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (365, 431), 错误: [Errno 2] No such file or directory: '365'
+2026-04-02 17:29:30,093 - socket_client.config.settings - ERROR - [8/33] 操作失败: 操作执行失败: mouse_move, 坐标: (365, 431), 错误: [Errno 2] No such file or directory: '365'
+2026-04-02 17:29:30,461 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (365, 431), 错误: [Errno 2] No such file or directory: '365'
+2026-04-02 17:29:30,461 - socket_client.config.settings - ERROR - [9/34] 操作失败: 操作执行失败: mouse_click, 坐标: (365, 431), 错误: [Errno 2] No such file or directory: '365'
+2026-04-02 17:29:32,971 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (365, 431), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 2 - 系统找不到指定的文件。
+2026-04-02 17:29:32,971 - socket_client.config.settings - ERROR - [10/35] 操作失败: 操作执行失败: mouse_click, 坐标: (365, 431), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 2 - 系统找不到指定的文件。
+2026-04-02 17:29:34,575 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (365, 430), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 2 - 系统找不到指定的文件。
+2026-04-02 17:29:34,575 - socket_client.config.settings - ERROR - [11/36] 操作失败: 操作执行失败: mouse_move, 坐标: (365, 430), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 2 - 系统找不到指定的文件。
+2026-04-02 17:29:35,280 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (495, 289), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 2 - 系统找不到指定的文件。
+2026-04-02 17:29:35,280 - socket_client.config.settings - ERROR - [12/37] 操作失败: 操作执行失败: mouse_move, 坐标: (495, 289), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 2 - 系统找不到指定的文件。
+2026-04-02 17:29:35,597 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (495, 289), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 2 - 系统找不到指定的文件。
+2026-04-02 17:29:35,597 - socket_client.config.settings - ERROR - [13/38] 操作失败: 操作执行失败: mouse_click, 坐标: (495, 289), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 2 - 系统找不到指定的文件。
+2026-04-02 17:29:35,598 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (496, 289), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 2 - 系统找不到指定的文件。
+2026-04-02 17:29:35,598 - socket_client.config.settings - ERROR - [14/39] 操作失败: 操作执行失败: mouse_move, 坐标: (496, 289), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 2 - 系统找不到指定的文件。
+2026-04-02 17:29:36,702 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (805, 690), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:29:36,703 - socket_client.config.settings - ERROR - [15/40] 操作失败: 操作执行失败: mouse_move, 坐标: (805, 690), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:29:36,819 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (805, 690), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:29:36,819 - socket_client.config.settings - ERROR - [16/41] 操作失败: 操作执行失败: mouse_click, 坐标: (805, 690), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:29:36,931 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (804, 689), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 2 - 系统找不到指定的文件。
+2026-04-02 17:29:36,931 - socket_client.config.settings - ERROR - [17/42] 操作失败: 操作执行失败: mouse_move, 坐标: (804, 689), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 2 - 系统找不到指定的文件。
+2026-04-02 17:29:37,843 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (414, 284), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 2 - 系统找不到指定的文件。
+2026-04-02 17:29:37,845 - socket_client.config.settings - ERROR - [18/43] 操作失败: 操作执行失败: mouse_move, 坐标: (414, 284), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 2 - 系统找不到指定的文件。
+2026-04-02 17:29:38,650 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (414, 284), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 2 - 系统找不到指定的文件。
+2026-04-02 17:29:38,650 - socket_client.config.settings - ERROR - [19/44] 操作失败: 操作执行失败: mouse_click, 坐标: (414, 284), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 2 - 系统找不到指定的文件。
+2026-04-02 17:29:42,660 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (431, 292), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 2 - 系统找不到指定的文件。
+2026-04-02 17:29:42,660 - socket_client.config.settings - ERROR - [20/45] 操作失败: 操作执行失败: mouse_move, 坐标: (431, 292), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 2 - 系统找不到指定的文件。
+2026-04-02 17:29:45,070 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (531, 286), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 2 - 系统找不到指定的文件。
+2026-04-02 17:29:45,070 - socket_client.config.settings - ERROR - [21/46] 操作失败: 操作执行失败: mouse_move, 坐标: (531, 286), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 2 - 系统找不到指定的文件。
+2026-04-02 17:29:46,177 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (531, 286), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 2 - 系统找不到指定的文件。
+2026-04-02 17:29:46,177 - socket_client.config.settings - ERROR - [22/47] 操作失败: 操作执行失败: mouse_click, 坐标: (531, 286), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 2 - 系统找不到指定的文件。
+2026-04-02 17:29:46,492 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (530, 286), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 2 - 系统找不到指定的文件。
+2026-04-02 17:29:46,492 - socket_client.config.settings - ERROR - [23/48] 操作失败: 操作执行失败: mouse_move, 坐标: (530, 286), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 2 - 系统找不到指定的文件。
+2026-04-02 17:29:47,398 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (907, 687), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:29:47,398 - socket_client.config.settings - ERROR - [24/49] 操作失败: 操作执行失败: mouse_move, 坐标: (907, 687), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:29:47,613 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (907, 687), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:29:47,613 - socket_client.config.settings - ERROR - [25/50] 操作失败: 操作执行失败: mouse_click, 坐标: (907, 687), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:29:47,613 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:29:47,615 - socket_client.config.settings - INFO - 操作回放完成
+2026-04-02 17:29:47,615 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:29:47,615 - socket_client.config.settings - INFO - 总操作数: 50
+2026-04-02 17:29:47,615 - socket_client.config.settings - INFO - 成功数: 0
+2026-04-02 17:29:47,615 - socket_client.config.settings - INFO - 失败数: 25
+2026-04-02 17:29:47,615 - socket_client.config.settings - INFO - 成功率: 0.00%
+2026-04-02 17:29:47,615 - socket_client.config.settings - INFO - 总耗时: 31.481秒
+2026-04-02 17:29:47,615 - socket_client.config.settings - INFO - 平均每条操作: 0.630秒
+2026-04-02 17:29:47,615 - socket_client.config.settings - WARNING - ============================================================
+2026-04-02 17:29:47,615 - socket_client.config.settings - WARNING - 失败的操作详情:
+2026-04-02 17:29:47,615 - socket_client.config.settings - WARNING - ============================================================
+2026-04-02 17:29:47,615 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: ('809', '641')
+2026-04-02 17:29:47,615 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: ('1193', '348')
+2026-04-02 17:29:47,615 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: ('1193', '348')
+2026-04-02 17:29:47,615 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: ('1193', '348')
+2026-04-02 17:29:47,616 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: ('409', '291')
+2026-04-02 17:29:47,616 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: ('409', '291')
+2026-04-02 17:29:47,616 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: ('424', '290')
+2026-04-02 17:29:47,616 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: ('365', '431')
+2026-04-02 17:29:47,616 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: ('365', '431')
+2026-04-02 17:29:47,616 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: ('365', '431')
+2026-04-02 17:29:47,616 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: ('365', '430')
+2026-04-02 17:29:47,616 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: ('495', '289')
+2026-04-02 17:29:47,616 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: ('495', '289')
+2026-04-02 17:29:47,616 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: ('496', '289')
+2026-04-02 17:29:47,616 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: ('805', '690')
+2026-04-02 17:29:47,616 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: ('805', '690')
+2026-04-02 17:29:47,616 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: ('804', '689')
+2026-04-02 17:29:47,617 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: ('414', '284')
+2026-04-02 17:29:47,617 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: ('414', '284')
+2026-04-02 17:29:47,617 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: ('431', '292')
+2026-04-02 17:29:47,617 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: ('531', '286')
+2026-04-02 17:29:47,617 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: ('531', '286')
+2026-04-02 17:29:47,617 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: ('530', '286')
+2026-04-02 17:29:47,617 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: ('907', '687')
+2026-04-02 17:29:47,617 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: ('907', '687')
+2026-04-02 17:29:47,617 - socket_client.config.settings - INFO - 操作执行器已停止
+2026-04-02 17:32:22,576 - socket_client.config.settings - INFO - CSV文件解析成功: documents\录制会话_20260402_100410\录制会话_20260402_172756_operation_log.csv，共解析 25 条操作
+2026-04-02 17:32:22,576 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:32:22,576 - socket_client.config.settings - INFO - 操作回放开始
+2026-04-02 17:32:22,577 - socket_client.config.settings - INFO - 操作记录文件: None
+2026-04-02 17:32:22,577 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:32:22,577 - socket_client.config.settings - INFO - 开始加载操作记录: None
+2026-04-02 17:32:22,577 - socket_client.config.settings - INFO - 加载完成，共 25 条操作记录
+2026-04-02 17:32:22,577 - socket_client.config.settings - INFO - 开始执行 25 条操作...
+2026-04-02 17:32:44,828 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (805, 690), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:32:44,828 - socket_client.config.settings - ERROR - [15/40] 操作失败: 操作执行失败: mouse_move, 坐标: (805, 690), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:32:44,940 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (805, 690), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:32:44,940 - socket_client.config.settings - ERROR - [16/41] 操作失败: 操作执行失败: mouse_click, 坐标: (805, 690), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:32:57,029 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (907, 687), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:32:57,032 - socket_client.config.settings - ERROR - [24/49] 操作失败: 操作执行失败: mouse_move, 坐标: (907, 687), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:32:57,244 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (907, 687), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:32:57,244 - socket_client.config.settings - ERROR - [25/50] 操作失败: 操作执行失败: mouse_click, 坐标: (907, 687), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:32:57,244 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:32:57,244 - socket_client.config.settings - INFO - 操作回放完成
+2026-04-02 17:32:57,245 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:32:57,245 - socket_client.config.settings - INFO - 总操作数: 50
+2026-04-02 17:32:57,245 - socket_client.config.settings - INFO - 成功数: 21
+2026-04-02 17:32:57,245 - socket_client.config.settings - INFO - 失败数: 4
+2026-04-02 17:32:57,245 - socket_client.config.settings - INFO - 成功率: 42.00%
+2026-04-02 17:32:57,245 - socket_client.config.settings - INFO - 总耗时: 34.669秒
+2026-04-02 17:32:57,245 - socket_client.config.settings - INFO - 平均每条操作: 0.693秒
+2026-04-02 17:32:57,245 - socket_client.config.settings - WARNING - ============================================================
+2026-04-02 17:32:57,245 - socket_client.config.settings - WARNING - 失败的操作详情:
+2026-04-02 17:32:57,245 - socket_client.config.settings - WARNING - ============================================================
+2026-04-02 17:32:57,245 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (805, 690)
+2026-04-02 17:32:57,246 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (805, 690)
+2026-04-02 17:32:57,246 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (907, 687)
+2026-04-02 17:32:57,246 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (907, 687)
+2026-04-02 17:32:57,246 - socket_client.config.settings - INFO - 操作执行器已停止
+2026-04-02 17:34:04,733 - socket_client.config.settings - INFO - CSV文件解析成功: documents\录制会话_20260402_100410\录制会话_20260402_172756_operation_log.csv，共解析 25 条操作
+2026-04-02 17:34:04,733 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:34:04,733 - socket_client.config.settings - INFO - 操作回放开始
+2026-04-02 17:34:04,733 - socket_client.config.settings - INFO - 操作记录文件: None
+2026-04-02 17:34:04,733 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:34:04,733 - socket_client.config.settings - INFO - 开始加载操作记录: None
+2026-04-02 17:34:04,733 - socket_client.config.settings - INFO - 加载完成，共 25 条操作记录
+2026-04-02 17:34:04,733 - socket_client.config.settings - INFO - 开始执行 25 条操作...
+2026-04-02 17:34:27,019 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (805, 690), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:34:27,019 - socket_client.config.settings - ERROR - [15/40] 操作失败: 操作执行失败: mouse_move, 坐标: (805, 690), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:34:27,122 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (805, 690), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:34:27,122 - socket_client.config.settings - ERROR - [16/41] 操作失败: 操作执行失败: mouse_click, 坐标: (805, 690), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:34:32,825 - socket_client.config.settings - INFO - 操作执行器已停止
+2026-04-02 17:34:32,825 - socket_client.config.settings - INFO - 用户中断了回放
+2026-04-02 17:35:35,809 - socket_client.config.settings - INFO - CSV文件解析成功: documents\录制会话_20260402_100410\录制会话_20260402_172756_operation_log.csv，共解析 25 条操作
+2026-04-02 17:35:35,811 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:35:35,811 - socket_client.config.settings - INFO - 操作回放开始
+2026-04-02 17:35:35,811 - socket_client.config.settings - INFO - 操作记录文件: None
+2026-04-02 17:35:35,811 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:35:35,811 - socket_client.config.settings - INFO - 开始加载操作记录: None
+2026-04-02 17:35:35,811 - socket_client.config.settings - INFO - 加载完成，共 25 条操作记录
+2026-04-02 17:35:35,811 - socket_client.config.settings - INFO - 开始执行 25 条操作...
+2026-04-02 17:35:37,328 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (1193, 348), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 0 - 操作成功完成。
+2026-04-02 17:35:37,328 - socket_client.config.settings - ERROR - [2/27] 操作失败: 操作执行失败: mouse_move, 坐标: (1193, 348), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 0 - 操作成功完成。
+2026-04-02 17:35:38,830 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (1193, 348), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 0 - 操作成功完成。
+2026-04-02 17:35:38,831 - socket_client.config.settings - ERROR - [3/28] 操作失败: 操作执行失败: mouse_click, 坐标: (1193, 348), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 0 - 操作成功完成。
+2026-04-02 17:35:40,840 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (1193, 348), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 0 - 操作成功完成。
+2026-04-02 17:35:40,840 - socket_client.config.settings - ERROR - [4/29] 操作失败: 操作执行失败: mouse_move, 坐标: (1193, 348), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 0 - 操作成功完成。
+2026-04-02 17:35:42,155 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (409, 291), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 0 - 操作成功完成。
+2026-04-02 17:35:42,155 - socket_client.config.settings - ERROR - [5/30] 操作失败: 操作执行失败: mouse_move, 坐标: (409, 291), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 0 - 操作成功完成。
+2026-04-02 17:35:42,270 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (409, 291), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 0 - 操作成功完成。
+2026-04-02 17:35:42,270 - socket_client.config.settings - ERROR - [6/31] 操作失败: 操作执行失败: mouse_click, 坐标: (409, 291), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 0 - 操作成功完成。
+2026-04-02 17:35:46,974 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (424, 290), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 0 - 操作成功完成。
+2026-04-02 17:35:46,974 - socket_client.config.settings - ERROR - [7/32] 操作失败: 操作执行失败: mouse_move, 坐标: (424, 290), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 0 - 操作成功完成。
+2026-04-02 17:35:48,788 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (365, 431), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 0 - 操作成功完成。
+2026-04-02 17:35:48,788 - socket_client.config.settings - ERROR - [8/33] 操作失败: 操作执行失败: mouse_move, 坐标: (365, 431), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 0 - 操作成功完成。
+2026-04-02 17:35:48,994 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (365, 431), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 0 - 操作成功完成。
+2026-04-02 17:35:48,994 - socket_client.config.settings - ERROR - [9/34] 操作失败: 操作执行失败: mouse_click, 坐标: (365, 431), 错误: WindowNotFoundError: 窗口操作失败: Advanced Computer Operation Recorder, 错误: Error code from Windows: 0 - 操作成功完成。
+2026-04-02 17:35:56,338 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (805, 690), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:35:56,338 - socket_client.config.settings - ERROR - [15/40] 操作失败: 操作执行失败: mouse_move, 坐标: (805, 690), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:35:56,456 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (805, 690), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:35:56,457 - socket_client.config.settings - ERROR - [16/41] 操作失败: 操作执行失败: mouse_click, 坐标: (805, 690), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:36:08,565 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (907, 687), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:36:08,565 - socket_client.config.settings - ERROR - [24/49] 操作失败: 操作执行失败: mouse_move, 坐标: (907, 687), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:36:08,775 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (907, 687), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:36:08,779 - socket_client.config.settings - ERROR - [25/50] 操作失败: 操作执行失败: mouse_click, 坐标: (907, 687), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:36:08,779 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:36:08,779 - socket_client.config.settings - INFO - 操作回放完成
+2026-04-02 17:36:08,779 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:36:08,779 - socket_client.config.settings - INFO - 总操作数: 50
+2026-04-02 17:36:08,779 - socket_client.config.settings - INFO - 成功数: 13
+2026-04-02 17:36:08,779 - socket_client.config.settings - INFO - 失败数: 12
+2026-04-02 17:36:08,779 - socket_client.config.settings - INFO - 成功率: 26.00%
+2026-04-02 17:36:08,779 - socket_client.config.settings - INFO - 总耗时: 32.968秒
+2026-04-02 17:36:08,779 - socket_client.config.settings - INFO - 平均每条操作: 0.659秒
+2026-04-02 17:36:08,779 - socket_client.config.settings - WARNING - ============================================================
+2026-04-02 17:36:08,779 - socket_client.config.settings - WARNING - 失败的操作详情:
+2026-04-02 17:36:08,779 - socket_client.config.settings - WARNING - ============================================================
+2026-04-02 17:36:08,779 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (1193, 348)
+2026-04-02 17:36:08,779 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (1193, 348)
+2026-04-02 17:36:08,779 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (1193, 348)
+2026-04-02 17:36:08,779 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (409, 291)
+2026-04-02 17:36:08,779 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (409, 291)
+2026-04-02 17:36:08,779 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (424, 290)
+2026-04-02 17:36:08,779 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (365, 431)
+2026-04-02 17:36:08,779 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (365, 431)
+2026-04-02 17:36:08,779 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (805, 690)
+2026-04-02 17:36:08,779 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (805, 690)
+2026-04-02 17:36:08,779 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (907, 687)
+2026-04-02 17:36:08,779 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (907, 687)
+2026-04-02 17:36:08,779 - socket_client.config.settings - INFO - 操作执行器已停止
+2026-04-02 17:42:02,321 - socket_client.config.settings - INFO - CSV文件解析成功: documents\录制会话_20260402_100410\录制会话_20260402_172756_operation_log.csv，共解析 25 条操作
+2026-04-02 17:42:02,321 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:42:02,321 - socket_client.config.settings - INFO - 操作回放开始
+2026-04-02 17:42:02,321 - socket_client.config.settings - INFO - 操作记录文件: None
+2026-04-02 17:42:02,321 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:42:02,321 - socket_client.config.settings - INFO - 开始加载操作记录: None
+2026-04-02 17:42:02,321 - socket_client.config.settings - INFO - 加载完成，共 25 条操作记录
+2026-04-02 17:42:02,321 - socket_client.config.settings - INFO - 开始执行 25 条操作...
+2026-04-02 17:42:24,585 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (805, 690), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:42:24,585 - socket_client.config.settings - ERROR - [15/40] 操作失败: 操作执行失败: mouse_move, 坐标: (805, 690), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:42:24,688 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (805, 690), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:42:24,688 - socket_client.config.settings - ERROR - [16/41] 操作失败: 操作执行失败: mouse_click, 坐标: (805, 690), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:42:33,589 - socket_client.config.settings - INFO - 操作执行器已停止
+2026-04-02 17:42:33,589 - socket_client.config.settings - INFO - 用户中断了回放
+2026-04-02 17:47:52,501 - socket_client.config.settings - INFO - CSV文件解析成功: documents\录制会话_20260402_100410\录制会话_20260402_172756_operation_log.csv，共解析 25 条操作
+2026-04-02 17:47:52,501 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:47:52,501 - socket_client.config.settings - INFO - 操作回放开始
+2026-04-02 17:47:52,501 - socket_client.config.settings - INFO - 操作记录文件: None
+2026-04-02 17:47:52,501 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:47:52,501 - socket_client.config.settings - INFO - 开始加载操作记录: None
+2026-04-02 17:47:52,501 - socket_client.config.settings - INFO - 加载完成，共 25 条操作记录
+2026-04-02 17:47:52,501 - socket_client.config.settings - INFO - 开始执行 25 条操作...
+2026-04-02 17:48:14,743 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (805, 690), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:48:14,745 - socket_client.config.settings - ERROR - [15/40] 操作失败: 操作执行失败: mouse_move, 坐标: (805, 690), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:48:14,849 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (805, 690), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:48:14,849 - socket_client.config.settings - ERROR - [16/41] 操作失败: 操作执行失败: mouse_click, 坐标: (805, 690), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:48:26,911 - socket_client.config.settings - ERROR - 操作执行失败: mouse_move, 坐标: (907, 687), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:48:26,911 - socket_client.config.settings - ERROR - [24/49] 操作失败: 操作执行失败: mouse_move, 坐标: (907, 687), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:48:27,111 - socket_client.config.settings - ERROR - 操作执行失败: mouse_click, 坐标: (907, 687), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:48:27,111 - socket_client.config.settings - ERROR - [25/50] 操作失败: 操作执行失败: mouse_click, 坐标: (907, 687), 错误: WindowNotFoundError: 激活窗口失败: 停止录制确认, 错误: WindowNotFoundError: 窗口不存在: 停止录制确认
+2026-04-02 17:48:27,111 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:48:27,111 - socket_client.config.settings - INFO - 操作回放完成
+2026-04-02 17:48:27,111 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:48:27,111 - socket_client.config.settings - INFO - 总操作数: 50
+2026-04-02 17:48:27,111 - socket_client.config.settings - INFO - 成功数: 21
+2026-04-02 17:48:27,111 - socket_client.config.settings - INFO - 失败数: 4
+2026-04-02 17:48:27,111 - socket_client.config.settings - INFO - 成功率: 42.00%
+2026-04-02 17:48:27,111 - socket_client.config.settings - INFO - 总耗时: 34.610秒
+2026-04-02 17:48:27,111 - socket_client.config.settings - INFO - 平均每条操作: 0.692秒
+2026-04-02 17:48:27,111 - socket_client.config.settings - WARNING - ============================================================
+2026-04-02 17:48:27,111 - socket_client.config.settings - WARNING - 失败的操作详情:
+2026-04-02 17:48:27,111 - socket_client.config.settings - WARNING - ============================================================
+2026-04-02 17:48:27,111 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (805, 690)
+2026-04-02 17:48:27,111 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (805, 690)
+2026-04-02 17:48:27,111 - socket_client.config.settings - WARNING - - mouse_move: mouse_move 执行失败: 操作类型: mouse_move, 坐标: (907, 687)
+2026-04-02 17:48:27,111 - socket_client.config.settings - WARNING - - mouse_click: mouse_click 执行失败: 操作类型: mouse_click, 坐标: (907, 687)
+2026-04-02 17:48:27,111 - socket_client.config.settings - INFO - 操作执行器已停止
+2026-04-02 17:50:32,235 - socket_client.config.settings - INFO - CSV文件解析成功: documents\录制会话_20260402_100410\录制会话_20260402_172756_operation_log.csv，共解析 25 条操作
+2026-04-02 17:50:32,235 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:50:32,235 - socket_client.config.settings - INFO - 操作回放开始
+2026-04-02 17:50:32,235 - socket_client.config.settings - INFO - 操作记录文件: None
+2026-04-02 17:50:32,235 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:50:32,235 - socket_client.config.settings - INFO - 开始加载操作记录: None
+2026-04-02 17:50:32,235 - socket_client.config.settings - INFO - 加载完成，共 25 条操作记录
+2026-04-02 17:50:32,235 - socket_client.config.settings - INFO - 开始执行 25 条操作...
+2026-04-02 17:51:05,088 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:51:05,088 - socket_client.config.settings - INFO - 操作回放完成
+2026-04-02 17:51:05,088 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:51:05,088 - socket_client.config.settings - INFO - 总操作数: 50
+2026-04-02 17:51:05,088 - socket_client.config.settings - INFO - 成功数: 25
+2026-04-02 17:51:05,088 - socket_client.config.settings - INFO - 失败数: 0
+2026-04-02 17:51:05,088 - socket_client.config.settings - INFO - 成功率: 50.00%
+2026-04-02 17:51:05,088 - socket_client.config.settings - INFO - 总耗时: 32.854秒
+2026-04-02 17:51:05,088 - socket_client.config.settings - INFO - 平均每条操作: 0.657秒
+2026-04-02 17:51:05,088 - socket_client.config.settings - INFO - 操作执行器已停止
+2026-04-02 17:51:34,144 - socket_client.config.settings - INFO - CSV文件解析成功: documents\录制会话_20260402_100410\录制会话_20260402_172756_operation_log.csv，共解析 25 条操作
+2026-04-02 17:51:34,144 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:51:34,144 - socket_client.config.settings - INFO - 操作回放开始
+2026-04-02 17:51:34,144 - socket_client.config.settings - INFO - 操作记录文件: None
+2026-04-02 17:51:34,144 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:51:34,144 - socket_client.config.settings - INFO - 开始加载操作记录: None
+2026-04-02 17:51:34,144 - socket_client.config.settings - INFO - 加载完成，共 25 条操作记录
+2026-04-02 17:51:34,144 - socket_client.config.settings - INFO - 开始执行 25 条操作...
+2026-04-02 17:52:07,015 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:52:07,015 - socket_client.config.settings - INFO - 操作回放完成
+2026-04-02 17:52:07,015 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:52:07,015 - socket_client.config.settings - INFO - 总操作数: 50
+2026-04-02 17:52:07,015 - socket_client.config.settings - INFO - 成功数: 25
+2026-04-02 17:52:07,015 - socket_client.config.settings - INFO - 失败数: 0
+2026-04-02 17:52:07,015 - socket_client.config.settings - INFO - 成功率: 50.00%
+2026-04-02 17:52:07,015 - socket_client.config.settings - INFO - 总耗时: 32.871秒
+2026-04-02 17:52:07,015 - socket_client.config.settings - INFO - 平均每条操作: 0.657秒
+2026-04-02 17:52:07,015 - socket_client.config.settings - INFO - 操作执行器已停止
+2026-04-02 17:52:26,776 - socket_client.config.settings - INFO - CSV文件解析成功: documents\录制会话_20260402_100410\录制会话_20260402_172756_operation_log.csv，共解析 25 条操作
+2026-04-02 17:52:26,777 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:52:26,777 - socket_client.config.settings - INFO - 操作回放开始
+2026-04-02 17:52:26,777 - socket_client.config.settings - INFO - 操作记录文件: None
+2026-04-02 17:52:26,777 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:52:26,777 - socket_client.config.settings - INFO - 开始加载操作记录: None
+2026-04-02 17:52:26,777 - socket_client.config.settings - INFO - 加载完成，共 25 条操作记录
+2026-04-02 17:52:26,777 - socket_client.config.settings - INFO - 开始执行 25 条操作...
+2026-04-02 17:52:59,682 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:52:59,682 - socket_client.config.settings - INFO - 操作回放完成
+2026-04-02 17:52:59,682 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:52:59,684 - socket_client.config.settings - INFO - 总操作数: 50
+2026-04-02 17:52:59,684 - socket_client.config.settings - INFO - 成功数: 25
+2026-04-02 17:52:59,684 - socket_client.config.settings - INFO - 失败数: 0
+2026-04-02 17:52:59,684 - socket_client.config.settings - INFO - 成功率: 50.00%
+2026-04-02 17:52:59,685 - socket_client.config.settings - INFO - 总耗时: 32.905秒
+2026-04-02 17:52:59,685 - socket_client.config.settings - INFO - 平均每条操作: 0.658秒
+2026-04-02 17:52:59,685 - socket_client.config.settings - INFO - 操作执行器已停止
+2026-04-02 17:53:08,550 - socket_client.config.settings - INFO - CSV文件解析成功: documents\录制会话_20260402_100410\录制会话_20260402_172756_operation_log.csv，共解析 25 条操作
+2026-04-02 17:53:08,550 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:53:08,550 - socket_client.config.settings - INFO - 操作回放开始
+2026-04-02 17:53:08,550 - socket_client.config.settings - INFO - 操作记录文件: None
+2026-04-02 17:53:08,550 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:53:08,550 - socket_client.config.settings - INFO - 开始加载操作记录: None
+2026-04-02 17:53:08,550 - socket_client.config.settings - INFO - 加载完成，共 25 条操作记录
+2026-04-02 17:53:08,550 - socket_client.config.settings - INFO - 开始执行 25 条操作...
+2026-04-02 17:53:41,981 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:53:41,981 - socket_client.config.settings - INFO - 操作回放完成
+2026-04-02 17:53:41,983 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:53:41,983 - socket_client.config.settings - INFO - 总操作数: 50
+2026-04-02 17:53:41,983 - socket_client.config.settings - INFO - 成功数: 25
+2026-04-02 17:53:41,984 - socket_client.config.settings - INFO - 失败数: 0
+2026-04-02 17:53:41,984 - socket_client.config.settings - INFO - 成功率: 50.00%
+2026-04-02 17:53:41,984 - socket_client.config.settings - INFO - 总耗时: 33.431秒
+2026-04-02 17:53:41,984 - socket_client.config.settings - INFO - 平均每条操作: 0.669秒
+2026-04-02 17:53:41,985 - socket_client.config.settings - INFO - 操作执行器已停止
+2026-04-02 17:54:16,231 - socket_client.config.settings - INFO - CSV文件解析成功: documents\录制会话_20260402_100410\录制会话_20260402_172756_operation_log.csv，共解析 25 条操作
+2026-04-02 17:54:16,231 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:54:16,231 - socket_client.config.settings - INFO - 操作回放开始
+2026-04-02 17:54:16,231 - socket_client.config.settings - INFO - 操作记录文件: None
+2026-04-02 17:54:16,231 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:54:16,231 - socket_client.config.settings - INFO - 开始加载操作记录: None
+2026-04-02 17:54:16,231 - socket_client.config.settings - INFO - 加载完成，共 25 条操作记录
+2026-04-02 17:54:16,231 - socket_client.config.settings - INFO - 开始执行 25 条操作...
+2026-04-02 17:54:49,351 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:54:49,352 - socket_client.config.settings - INFO - 操作回放完成
+2026-04-02 17:54:49,352 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:54:49,353 - socket_client.config.settings - INFO - 总操作数: 50
+2026-04-02 17:54:49,353 - socket_client.config.settings - INFO - 成功数: 25
+2026-04-02 17:54:49,353 - socket_client.config.settings - INFO - 失败数: 0
+2026-04-02 17:54:49,354 - socket_client.config.settings - INFO - 成功率: 50.00%
+2026-04-02 17:54:49,354 - socket_client.config.settings - INFO - 总耗时: 33.119秒
+2026-04-02 17:54:49,354 - socket_client.config.settings - INFO - 平均每条操作: 0.662秒
+2026-04-02 17:54:49,355 - socket_client.config.settings - INFO - 操作执行器已停止
+2026-04-02 17:59:50,683 - socket_client.config.settings - INFO - CSV文件解析成功: documents\录制会话_20260402_100410\录制会话_20260402_172756_operation_log.csv，共解析 25 条操作
+2026-04-02 17:59:50,683 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:59:50,683 - socket_client.config.settings - INFO - 操作回放开始
+2026-04-02 17:59:50,683 - socket_client.config.settings - INFO - 操作记录文件: None
+2026-04-02 17:59:50,683 - socket_client.config.settings - INFO - ============================================================
+2026-04-02 17:59:50,683 - socket_client.config.settings - INFO - 开始加载操作记录: None
+2026-04-02 17:59:50,683 - socket_client.config.settings - INFO - 加载完成，共 25 条操作记录
+2026-04-02 17:59:50,683 - socket_client.config.settings - INFO - 开始执行 25 条操作...
+2026-04-02 17:59:50,684 - socket_client.config.settings - WARNING - 尝试转换窗口坐标失败: 'Win32Window' object has no attribute 'rect'，使用给定坐标 (809, 641)
+2026-04-02 17:59:52,096 - socket_client.config.settings - WARNING - 尝试转换窗口坐标失败: 'Win32Window' object has no attribute 'rect'，使用给定坐标 (1193, 348)
+2026-04-02 17:59:53,709 - socket_client.config.settings - WARNING - 尝试转换窗口坐标失败: 'Win32Window' object has no attribute 'rect'，使用给定坐标 (1193, 348)
+2026-04-02 17:59:55,824 - socket_client.config.settings - WARNING - 尝试转换窗口坐标失败: 'Win32Window' object has no attribute 'rect'，使用给定坐标 (1193, 348)
+2026-04-02 17:59:57,230 - socket_client.config.settings - WARNING - 尝试转换窗口坐标失败: 'Win32Window' object has no attribute 'rect'，使用给定坐标 (409, 291)
+2026-04-02 17:59:57,447 - socket_client.config.settings - WARNING - 尝试转换窗口坐标失败: 'Win32Window' object has no attribute 'rect'，使用给定坐标 (409, 291)
+2026-04-02 18:00:02,286 - socket_client.config.settings - WARNING - 尝试转换窗口坐标失败: 'Win32Window' object has no attribute 'rect'，使用给定坐标 (424, 290)
+2026-04-02 18:00:04,192 - socket_client.config.settings - WARNING - 尝试转换窗口坐标失败: 'Win32Window' object has no attribute 'rect'，使用给定坐标 (365, 431)
+2026-04-02 18:00:04,512 - socket_client.config.settings - WARNING - 尝试转换窗口坐标失败: 'Win32Window' object has no attribute 'rect'，使用给定坐标 (365, 431)
+2026-04-02 18:00:07,145 - socket_client.config.settings - WARNING - 尝试转换窗口坐标失败: 'Win32Window' object has no attribute 'rect'，使用给定坐标 (365, 431)
+2026-04-02 18:00:08,880 - socket_client.config.settings - WARNING - 尝试转换窗口坐标失败: 'Win32Window' object has no attribute 'rect'，使用给定坐标 (365, 430)
+2026-04-02 18:00:09,684 - socket_client.config.settings - WARNING - 尝试转换窗口坐标失败: 'Win32Window' object has no attribute 'rect'，使用给定坐标 (495, 289)
+2026-04-02 18:00:10,096 - socket_client.config.settings - WARNING - 尝试转换窗口坐标失败: 'Win32Window' object has no attribute 'rect'，使用给定坐标 (495, 289)
+2026-04-02 18:00:10,220 - socket_client.config.settings - WARNING - 尝试转换窗口坐标失败: 'Win32Window' object has no attribute 'rect'，使用给定坐标 (496, 289)
+2026-04-02 18:00:11,872 - socket_client.config.settings - WARNING - 尝试转换窗口坐标失败: 'Win32Window' object has no attribute 'rect'，使用给定坐标 (804, 689)
+2026-04-02 18:00:12,110 - socket_client.config.settings - INFO - 操作执行器已停止
+2026-04-02 18:00:12,110 - socket_client.config.settings - INFO - 用户中断了回放

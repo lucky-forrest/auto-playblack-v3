@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python:*)",
+      "Bash(/c/Users/52367/AppData/Local/Programs/Python/Python310/python:*)",
+      "Bash(python3 -m pip list)",
+      "Bash(find socket_client:*)",
+      "Bash(where python:*)",
+      "Bash(venv/Scripts/pip install:*)",
+      "Bash(venv/Scripts/python:*)",
+      "Bash(venv/Scripts/pip list:*)",
+      "Bash(ls:*)",
+      "Bash(findstr -i autoit)",
+      "Bash(dir \"C:\\\\Users\\\\52367\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\\\\Lib\\\\site-packages\")",
+      "Bash(findstr -i win32)",
+      "WebSearch",
+      "Bash(/c/Users/52367/AppData/Local/Programs/Python/Python310/python.exe -m pip install pywin32)",
+      "Bash(dir \"C:\\\\WorkSpace\\\\auto-playblack-v3\\\\venv\")",
+      "Bash(python3:*)",
+      "Bash(grep -l \"socket_client.config.settings\" *.py documents/s*.py)",
+      "Bash(grep -E \"\\\\.py$\")",
+      "Bash(rm:*)",
+      "Bash(find . -type f -name \"*.pyc\" -delete)",
+      "Bash(cp:*)",
+      "Bash(grep -E \"\\\\.py$|config\")",
+      "Bash(find .:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}
