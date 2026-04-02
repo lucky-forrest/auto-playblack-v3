@@ -24,7 +24,10 @@
       "Bash(cp:*)",
       "Bash(grep -E \"\\\\.py$|config\")",
       "Bash(find .:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git remote:*)",
+      "Bash(git push:*)"
     ]
   }
 }
