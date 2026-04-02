@@ -177,15 +177,66 @@ class OperationExecutor:
         Args:
             operation: 包含按键操作的对象
 
-        注意: 使用 pyautogui.press() 发送按键
+        注意: 别名 Key: a、Key: shift 等格式
+        - 修饰键单独发送（shift, ctrl, alt, win等）
+        - 字母/数字键支持组合输入（shift + a = A）
         """
         detail = operation.detail.lower()
         logger.debug(f"按下按键: {detail}")
-        try:
-            pyautogui.press(detail)
-        except Exception as e:
-            # 如果特定的按键名称不工作，尝试发送字符串
-            raise OperationExecuteError(f"按键发送失败: {e}")
+
+        # 从detail字段提取实际的按键名称
+        # CSV中的格式通常是 "Key: a"、"Key: shift"、"Key: backspace" 等
+        key_name = detail.replace("key: ", "").strip()
+
+        # 修饰键列表 - 这些键单独发送，用于与其他键组合
+        modifier_keys = {'shift', 'ctrl', 'control', 'alt', 'windows', 'win', 'command', 'apple'}
+
+        # 处理特殊按键名称的映射
+        # pyautogui.press() 支持: enter, tab, esc, space, up, down, left, right, backspace, home, end, pgup, pgdn, del, ins
+        # pyautogui.hotkey() 支持: shift, ctrl, alt, win 等修饰键组合
+        special_keys = {'enter', 'tab', 'esc', 'space', 'up', 'down', 'left', 'right',
+                       'backspace', 'home', 'end', 'pgup', 'pgdn', 'del', 'ins',
+                       'f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'f7', 'f8', 'f9', 'f10',
+                       'f11', 'f12', 'caps lock', 'num lock', 'scroll lock'}
+
+        if key_name in modifier_keys:
+            # 修饰键 - 虽然也可以用 press() 发送，但为了兼容组合键，我们也用 press()
+            try:
+                pyautogui.press(key_name)
+                logger.debug(f"发送修饰键: {key_name}")
+            except Exception as e:
+                raise OperationExecuteError(f"修饰键发送失败 (key_name={key_name}): {e}")
+        elif key_name in special_keys:
+            # 特殊按键 - 使用 press()
+            try:
+                pyautogui.press(key_name)
+                logger.debug(f"成功按下特殊按键: {key_name}")
+            except Exception as e:
+                logger.error(f"特殊按键发送失败 (key_name={key_name}): {e}")
+                # 作为备用方案，尝试使用 write()
+                try:
+                    pyautogui.write(key_name.lower(), interval=0.02)
+                    logger.debug(f"使用write发送特殊按键: {key_name}")
+                except Exception as e2:
+                    raise OperationExecuteError(f"特殊按键发送失败 (key_name={key_name}): {e2}")
+        else:
+            # 普通字母/数字键 - 支持 shift + a 输入大写A
+            # 使用写操作来自动处理修饰键
+            try:
+                # 写入小写字母（pyautogui.write会自动处理shift等修饰键）
+                pyautogui.write(key_name.lower(), interval=0.02)
+                logger.debug(f"成功输入按键: {key_name}")
+            except Exception as e:
+                logger.error(f"按键输入失败 (key_name={key_name}, detail={detail}): {e}")
+                # 如果使用write失败，尝试使用press()发送修饰键 + 按键
+                modifier = []
+                if 'shift' in detail.lower():
+                    modifier.append('shift')
+                try:
+                    pyautogui.hotkey(*modifier, key_name.lower())
+                    logger.debug(f"使用hotkey组合键输入: {('+'.join(modifier) if modifier else '')} + {key_name}")
+                except Exception as e2:
+                    raise OperationExecuteError(f"按键发送失败 (key_name={key_name}): {e2}")
 
     def _key_release(self, operation: Operation) -> None:
         """

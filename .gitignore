@@ -1,0 +1,83 @@
+# -*- coding: UTF-8 -*-
+# Python编译和缓存文件
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# 虚拟环境
+venv/
+ENV/
+env/
+.venv
+
+# IDE配置文件
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# 日志文件
+*.log
+logs/
+
+# 操作回放系统相关
+operation_replay/data/*.csv
+*.csv.bak
+*.tmp
+temp/
+*.bak
+
+# 配置文件中的敏感信息
+config.json
+config.yaml
+cred.json
+secret.key
+
+# 操作回放录制文件（如果包含用户数据）
+recordings/
+*.rec
+session_data/
+
+# 测试相关
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.mypy_cache/
+igrations_(
+# 系统文件
+Thumbs.db
+Desktop.ini
+
+# Node相关（如果使用）
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 压缩文件
+*.zip
+*.tar.gz
+*.rar
+
+
+documents/
