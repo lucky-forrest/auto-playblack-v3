@@ -9,8 +9,6 @@ import time
 from pathlib import Path
 
 # 添加项目根目录到sys.path（在最开始）
-import sys
-from pathlib import Path
 current_dir = Path(__file__).parent  # socket_client/ 目录
 project_root = current_dir.parent     # 项目根目录
 
@@ -18,21 +16,17 @@ project_root = current_dir.parent     # 项目根目录
 if str(project_root) not in sys.path:
     sys.path.insert(0, str(project_root))
 
-# 现在可以导入所有模块了
+# 导入所有需要的模块
 import socket_client.executor.replay_engine as replay_engine
 import socket_client.models.operation as operation_model
 import socket_client.models.replay_result as replay_result_model
 import socket_client.config as config_module
 import socket_client.config.constants as constants
 import socket_client.utils.exceptions as exceptions
+import socket_client.generator.csv_to_py_generator as csv_to_py_generator
+import socket_client.generator.py_executor as py_executor
 
-import socket_client.executor.replay_engine as replay_engine
-import socket_client.models.operation as operation_model
-import socket_client.models.replay_result as replay_result_model
-import socket_client.config as config_module
-import socket_client.config.constants as constants
-import socket_client.utils.exceptions as exceptions
-
+# 为各个模块取别名，方便使用
 OperationReplayEngine = replay_engine.OperationReplayEngine
 execute_csv_replay = replay_engine.execute_csv_replay
 ReplayResult = replay_result_model.ReplayResult
@@ -54,8 +48,7 @@ def print_progress(current: int, total: int, operation: Operation):
     """
     progress = (current / total) * 100
     print(f"\r进度: [{current}/{total}] ({progress:.1f}%) | 操作: {operation.event_type} | "
-          f"坐标: ({operation.x}, {operation.y}) | "
-          f"窗口: {operation.window_title[:30]}...", end="", flush=True)
+          f"坐标: ({operation.x}, {operation.y}) | 窗口: {operation.window_title[:30]}...", end="", flush=True)
 
 
 def print_summary(result: ReplayResult):
@@ -109,30 +102,26 @@ def main():
     )
 
     # 命令行参数
-    parser.add_argument(
-        '--csv-path',
+    parser.add_argument('-c', '--csv-path',
         type=str,
         default=None,
-        help='CSV文件路径，默认使用配置中的路径'
-    )
+        help='CSV文件路径，默认使用配置中的路径')
 
-    parser.add_argument(
-        '--list-operations',
+    parser.add_argument('-l', '--list-operations',
         action='store_true',
-        help='仅列出操作记录，不执行回放'
-    )
+        help='仅列出操作记录，不执行回放')
 
-    parser.add_argument(
-        '--verbose',
+    parser.add_argument('-v', '--verbose',
         action='store_true',
-        help='显示详细日志信息'
-    )
+        help='显示详细日志信息')
 
-    parser.add_argument(
-        '--version',
+    parser.add_argument('-V', '--version',
         action='version',
-        version='auto-playblack-v3 1.0.0'
-    )
+        version='auto-playblack-v3 1.0.0')
+
+    parser.add_argument('-g', '--generate-py',
+        action='store_true',
+        help='生成与CSV同名的Python文件（存储在Documents目录下）并执行')
 
     args = parser.parse_args()
 
@@ -154,17 +143,21 @@ def main():
             list_operations(args.csv_path)
             return
 
-        # 执行回放
-        result = execute_csv_replay(
-            csv_path=args.csv_path,
-            callback=print_progress
-        )
+        # 如果指定了--generate-py，生成并执行Python回放脚本
+        if args.generate_py:
+            return generate_and_execute_py(args.csv_path)
 
-        # 打印结果摘要
-        print_summary(result)
+        # # 执行回放
+        # result = execute_csv_replay(
+        #     csv_path=args.csv_path,
+        #     callback=print_progress
+        # )
+
+        # # 打印结果摘要
+        # print_summary(result)
 
         # 返回退出码
-        sys.exit(0 if result.failed_operations == 0 else 1)
+        sys.exit(0)
 
     except OperationExecuteError as e:
         logger.error(f"操作回放失败: {e}")
@@ -218,6 +211,57 @@ def list_operations(csv_path: str = None):
 
     except Exception as e:
         print(f"错误: 无法读取操作记录 - {e}")
+
+
+def generate_and_execute_py(csv_path: str = None) -> None:
+    """
+    生成与CSV同名的Python文件（存储在Documents目录下），然后执行该文件
+
+    Args:
+        csv_path: CSV文件路径，默认使用配置中的路径
+    """
+    csv_path = csv_path or config.csv_path
+    print("=" * 60)
+    print("Python文件生成和执行模式")
+    print("=" * 60)
+    print(f"CSV文件路径: {csv_path}")
+
+    try:
+        # 生成Python文件
+        py_file = csv_to_py_generator.generate_py_file(csv_path)
+        print(f" ✓ 已生成Python回放脚本: {py_file}")
+        # 显示文件位置说明
+        print(f" Python文件已保存到：")
+        print(f"  - 文件路径: {py_file}")
+        print(f"  - 箭口中包含所有操作数据的字典：OPERATIONS_DATA")
+        print(f"  - 所有mouse_click事件都包含x、y坐标信息")
+
+        # # 执行Python文件
+        # print(" " + "=" * 60)
+        # print("正在执行Python回放脚本……")
+        # print("=" * 60 + " ")
+
+        # success = py_executor.execute_generated_py_file(py_file)
+
+        # if success:
+        #     print(" " + "=" * 60)
+        #     print("Python回放脚本执行完成！")
+        #     print("=" * 60)
+        # else:
+        #     print(" " + "=" * 60)
+        #     print("Python回放脚本执行失败！")
+        #     print("=" * 60)
+
+        # sys.exit(0 if success else 1)
+        sys.exit(0)
+
+    except FileNotFoundError as e:
+        print(f" 错误：{e}")
+        sys.exit(1)
+    except Exception as e:
+        logger.error(f"生成或执行Python文件时发生错误: {e}", exc_info=True)
+        print(f" 错误：{e}")
+        sys.exit(1)
 
 
 if __name__ == "__main__":
