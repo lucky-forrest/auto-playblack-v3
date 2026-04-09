@@ -156,19 +156,59 @@ class OperationExecutor:
         Args:
             operation: 包含鼠标滚轮操作的对象
 
-        注意: 使用 pyautogui.scroll() 实现
+        注意: 滚动操作需要鼠标先移动到目标位置才能正确滚动目标窗口的内容
         """
-        detail = operation.detail.lower()
-        scroll_distance = 10  # 每次滚动的距离
+        # print(f"执行鼠标滚动操作，坐标: ({operation.x}, {operation.y}), detail: {operation.detail}, scroll_delta: {operation.scroll_delta}")
 
-        if "up" in detail or "上" in detail:
-            pyautogui.scroll(scroll_distance)
-            logger.debug("执行向上滚动")
-        elif "down" in detail or "下" in detail:
-            pyautogui.scroll(-scroll_distance)
-            logger.debug("执行向下滚动")
+        # 关键步骤：先激活窗口，确保滚动的是正确的窗口
+        if operation.window_title:
+            try:
+                logger.debug(f"滚动前激活窗口: {operation.window_title}")
+                windows = pygetwindow.getWindowsWithTitle(operation.window_title)
+                if windows:
+                    window = windows[0]
+                    window.activate()
+                    time.sleep(0.2)  # 等待窗口激活
+                    self._current_window = window
+                    logger.debug(f"窗口 [{operation.window_title}] 已激活")
+                else:
+                    logger.warning(f"未找到窗口: {operation.window_title}")
+            except PyGetWindowException as e:
+                logger.warning(f"无法激活窗口 [{operation.window_title}]: {e}")
+
+        # 再移动鼠标到目标坐标
+        if operation.x is not None and operation.y is not None:
+            logger.debug(f"滚动前移动鼠标到: ({operation.x}, {operation.y})")
+            pyautogui.moveTo(operation.x, operation.y)
+            time.sleep(0.1)  # 短暂延迟，确保鼠标已经到达目标位置
+
+        detail = operation.detail.lower()
+
+        # 优先使用CSV记录的scroll_delta值，否则从detail解析
+        if operation.scroll_delta is not None and operation.scroll_delta != 0:
+            # 使用CSV记录的滚动距离
+            scroll_distance = int(operation.scroll_delta)*50
         else:
-            logger.warning(f"未识别的滚动操作: {detail}")
+            # 从detail字段解析滚动方向
+            scroll_distance = 50  # 默认每次滚动的距离
+
+            if "up" in detail or "上" in detail:
+                scroll_distance = abs(scroll_distance)
+                logger.debug("执行向上滚动")
+            elif "down" in detail or "下" in detail:
+                scroll_distance = -abs(scroll_distance)
+                logger.debug("执行向下滚动")
+            else:
+                logger.warning(f"未识别的滚动方向，无法确定滚动方向: {detail}")
+                # 默认向下滚动
+                scroll_distance = 50
+                logger.debug("默认执行向下滚动")
+
+        # 执行滚动操作
+        logger.debug(f"执行滚动操作: {scroll_distance} 格")
+        print(f"执行滚动操作: {scroll_distance} 格")
+        pyautogui.scroll(scroll_distance)
+        time.sleep(0.1)  # 滚动后短暂延迟，确保事件被处理
 
     def _key_press(self, operation: Operation) -> None:
         """
@@ -220,23 +260,31 @@ class OperationExecutor:
                 except Exception as e2:
                     raise OperationExecuteError(f"特殊按键发送失败 (key_name={key_name}): {e2}")
         else:
-            # 普通字母/数字键 - 支持 shift + a 输入大写A
-            # 使用写操作来自动处理修饰键
+            # 普通字母/数字键 - 逐个发送
             try:
-                # 写入小写字母（pyautogui.write会自动处理shift等修饰键）
-                pyautogui.write(key_name.lower(), interval=0.02)
+                # 使用单独的press()逐个发送按键，确保在任何应用中都能工作
+                # 比write()更可靠，因为它不依赖输入焦点
+                for char in key_name.lower():
+                    pyautogui.press(char)
                 logger.debug(f"成功输入按键: {key_name}")
+                # 在发送单个字符后添加小延迟，确保被接收
+                time.sleep(0.05)
             except Exception as e:
                 logger.error(f"按键输入失败 (key_name={key_name}, detail={detail}): {e}")
-                # 如果使用write失败，尝试使用press()发送修饰键 + 按键
-                modifier = []
-                if 'shift' in detail.lower():
-                    modifier.append('shift')
+                # 如果单独发送失败，尝试使用write()作为备用
                 try:
-                    pyautogui.hotkey(*modifier, key_name.lower())
-                    logger.debug(f"使用hotkey组合键输入: {('+'.join(modifier) if modifier else '')} + {key_name}")
+                    pyautogui.write(key_name.lower(), interval=0.02)
+                    logger.debug(f"使用write发送按键: {key_name}")
                 except Exception as e2:
-                    raise OperationExecuteError(f"按键发送失败 (key_name={key_name}): {e2}")
+                    # 最后尝试使用hotkey
+                    modifier = []
+                    if 'shift' in detail.lower():
+                        modifier.append('shift')
+                    try:
+                        pyautogui.hotkey(*modifier, key_name.lower())
+                        logger.debug(f"使用hotkey组合键输入: {('+'.join(modifier) if modifier else '')} + {key_name}")
+                    except Exception as e3:
+                        raise OperationExecuteError(f"按键发送失败 (key_name={key_name}): {e3}")
 
     def _key_release(self, operation: Operation) -> None:
         """

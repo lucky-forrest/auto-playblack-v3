@@ -18,7 +18,24 @@ class Operation:
         y: Optional[int] = None,
         window_title: str = "",
         control_text: str = "",
-        delay: float = 0.0
+        delay: float = 0.0,
+        element_type: Optional[str] = None,
+        element_content: Optional[str] = None,
+        window_handle: Optional[str] = None,
+        window_class_name: Optional[str] = None,
+        window_process_id: Optional[int] = None,
+        window_process_name: Optional[str] = None,
+        window_visible: Optional[bool] = None,
+        window_enabled: Optional[bool] = None,
+        window_active: Optional[bool] = None,
+        control_handle: Optional[str] = None,
+        control_class_name: Optional[str] = None,
+        rect: Optional[str] = None,
+        relative_coordinates: Optional[str] = None,
+        application_name: Optional[str] = None,
+        scroll_delta: Optional[int] = None,
+        drag_delta_x: Optional[int] = None,
+        drag_delta_y: Optional[int] = None
     ):
         """初始化操作对象
 
@@ -31,6 +48,23 @@ class Operation:
             window_title: 窗口标题
             control_text: 控件文本
             delay: 延迟时间（秒）
+            element_type: 元素类型
+            element_content: 元素内容
+            window_handle: 窗口句柄
+            window_class_name: 窗口类名
+            window_process_id: 窗口进程ID
+            window_process_name: 窗口进程名
+            window_visible: 窗口是否可见
+            window_enabled: 窗口是否启用
+            window_active: 窗口是否激活
+            control_handle: 控件句柄
+            control_class_name: 控件类名
+            rect: 窗口/控件位置和大小
+            relative_coordinates: 相对坐标
+            application_name: 应用程序名称
+            scroll_delta: 滚动距离
+            drag_delta_x: 拖拽X距离
+            drag_delta_y: 拖拽Y距离
         """
         self.timestamp = timestamp
         self.event_type = event_type
@@ -41,13 +75,34 @@ class Operation:
         self.control_text = control_text
         self.delay = delay
 
+        # 通用属性
+        self.element_type = element_type
+        self.element_content = element_content
+        self.window_handle = window_handle
+        self.window_class_name = window_class_name
+        self.window_process_id = window_process_id
+        self.window_process_name = window_process_name
+        self.window_visible = window_visible
+        self.window_enabled = window_enabled
+        self.window_active = window_active
+        self.control_handle = control_handle
+        self.control_class_name = control_class_name
+        self.rect = rect
+        self.relative_coordinates = relative_coordinates
+        self.application_name = application_name
+
+        # 滚动和拖拽相关属性
+        self.scroll_delta = scroll_delta
+        self.drag_delta_x = drag_delta_x
+        self.drag_delta_y = drag_delta_y
+
     def to_dict(self):
         """将操作对象转换为字典
 
         Returns:
             dict: 操作信息的字典表示
         """
-        return {
+        data = {
             'timestamp': self.timestamp,
             'event_type': self.event_type,
             'detail': self.detail,
@@ -57,6 +112,20 @@ class Operation:
             'control_text': self.control_text,
             'delay': self.delay
         }
+
+        # 添加可选字段
+        if self.element_type is not None:
+            data['element_type'] = self.element_type
+        if self.element_content is not None:
+            data['element_content'] = self.element_content
+        if self.scroll_delta is not None:
+            data['scroll_delta'] = self.scroll_delta
+        if self.drag_delta_x is not None:
+            data['drag_delta_x'] = self.drag_delta_x
+        if self.drag_delta_y is not None:
+            data['drag_delta_y'] = self.drag_delta_y
+
+        return data
 
     def from_dict(self, data: dict):
         """从字典创建操作对象

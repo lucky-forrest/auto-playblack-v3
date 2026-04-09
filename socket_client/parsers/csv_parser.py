@@ -109,7 +109,10 @@ class CSVParser:
                         y=event.get('y'),
                         window_title=event.get('window_title', ''),
                         control_text=event.get('control_text', ''),
-                        delay=0.0  # 延迟由 TimeController 计算
+                        delay=0.0,  # 延迟由 TimeController 计算
+                        scroll_delta=int(event.get('scroll_delta', 0)) if event.get('scroll_delta') else None,
+                        drag_delta_x=int(event.get('drag_delta_x', 0)) if event.get('drag_delta_x') else None,
+                        drag_delta_y=int(event.get('drag_delta_y', 0)) if event.get('drag_delta_y') else None
                     )
                     self.operations.append(operation)
                 except KeyError as e:
@@ -174,6 +177,27 @@ class CSVParser:
             window_title = row.get('window_title', '')
             control_text = row.get('control_text', '')
 
+            # 解析通用属性
+            element_type = row.get('element_type', '')
+            element_content = row.get('element_content', '')
+            window_handle = row.get('window_handle', '')
+            window_class_name = row.get('window_class_name', '')
+            window_process_id = int(row.get('window_process_id', '')) if row.get('window_process_id') else None
+            window_process_name = row.get('window_process_name', '')
+            window_visible = True if row.get('window_visible', '') in ['1', 'true', 'True'] else False
+            window_enabled = True if row.get('window_enabled', '') in ['1', 'true', 'True'] else False
+            window_active = True if row.get('window_active', '') in ['1', 'true', 'True'] else False
+            control_handle = row.get('control_handle', '')
+            control_class_name = row.get('control_class_name', '')
+            rect = row.get('rect', '')
+            relative_coordinates = row.get('relative_coordinates', '')
+            application_name = row.get('application_name', '')
+
+            # 解析滚动和拖拽相关属性
+            scroll_delta = int(row.get('scroll_delta', '')) if row.get('scroll_delta') else None
+            drag_delta_x = int(row.get('drag_delta_x', '')) if row.get('drag_delta_x') else None
+            drag_delta_y = int(row.get('drag_delta_y', '')) if row.get('drag_delta_y') else None
+
             # 确保坐标值是整数
             param_x = row.get('x', x) if row.get('x') else x
             param_y = row.get('y', y) if row.get('y') else y
@@ -190,7 +214,24 @@ class CSVParser:
                 y=final_y,
                 window_title=window_title,
                 control_text=control_text,
-                delay=0.0  # 延迟由 TimeController 在执行时计算
+                delay=0.0,  # 延迟由 TimeController 在执行时计算
+                element_type=element_type,
+                element_content=element_content,
+                window_handle=window_handle,
+                window_class_name=window_class_name,
+                window_process_id=window_process_id,
+                window_process_name=window_process_name,
+                window_visible=window_visible,
+                window_enabled=window_enabled,
+                window_active=window_active,
+                control_handle=control_handle,
+                control_class_name=control_class_name,
+                rect=rect,
+                relative_coordinates=relative_coordinates,
+                application_name=application_name,
+                scroll_delta=scroll_delta,
+                drag_delta_x=drag_delta_x,
+                drag_delta_y=drag_delta_y
             )
 
             return operation
