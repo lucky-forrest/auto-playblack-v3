@@ -352,6 +352,8 @@ def generate_replay_script(operations: List[Dict], script_name: str) -> str:
     py_lines.append('        if i < len(operations) - 1 and event_type != last_event_type:')
     py_lines.append('            time.sleep(0.5)')
     py_lines.append('            last_event_type = event_type')
+    py_lines.append('        else:')
+    py_lines.append('            time.sleep(0.2)')
     py_lines.append('')
     py_lines.append('    print("")')
     py_lines.append('    print("=" * 60)')

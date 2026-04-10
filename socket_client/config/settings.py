@@ -23,7 +23,7 @@ class Config:
     def __init__(self):
         """初始化配置"""
         # CSV文件路径
-        self.csv_path = "documents/录制会话_20260402_100410/录制会话_20260409_113836_operation_log.csv"
+        self.csv_path = "documents/录制会话_20260402_100410/录制会话_20260410_120525_operation_log.csv"
 
         # 时间控制精度（秒）
         self.time_precision = 0.1
